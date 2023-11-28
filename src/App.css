@@ -1,38 +1,211 @@
-.App {
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: 300;
+     font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2Extra-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7Extra-Blod.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+#root, .App {
+  height : 100%;
+}
+
+.page1 {
+  width : 100%;
+  height : 100%;
+
+  background-color: #d0d0d0;
+}
+
+.business-card-wrap {
+  width: 290px; height: 466px;
+
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.business-card-wrap * {
+  font-family: S-CoreDream;
+
+  position: relative;
+  z-index: 999;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+
+  position: absolute;
+  top : 0; left : 0;
+
+  overflow: hidden;
+  transition: transform 1s;
+  backface-visibility: hidden;
+}
+
+.front {
+  padding: 20px 16px 16px;
+}
+
+.circle {
+  width: 500px; height: 500px;
+
+  border-radius: 400px;
+  background-color: rgba(0, 174, 201, 0.25);
+
+  position: absolute;
+  left: 0; top: 0;
+  transform: translateY(100px);
+  z-index: 1;
+}
+
+.edcan-logo-wrap {
+  text-align: right;
+}
+
+.edcan-logo-wrap img {
+  width: 80px;
+}
+
+.name-wrap h2 {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.name-wrap h3 {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.content-wrap {
+  margin-top: 24px;
+  padding: 4px 8px;
+  border-left: 3px solid #676767;
+}
+
+.content-wrap .title {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.content-wrap > div:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.content-wrap .content {
+  font-size: 12px;
+}
+
+.dots {
+  padding: 50px 0;
+
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots .dot {
+  width: 7px; height: 7px;
+  background-color: #676767;
+  border-radius: 100%;
+}
+
+.bottom {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bottom img {
+  width: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.back {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  transform: rotateY(180deg);
 }
 
-.App-link {
-  color: #61dafb;
+.back img {
+  width: 170px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.business-card-wrap.reverse .front {
+  transform: rotateY(-180deg);
+}
+
+.business-card-wrap.reverse .back {
+  transform: rotateY(0deg);
 }
