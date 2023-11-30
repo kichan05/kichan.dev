@@ -65,6 +65,8 @@
   margin : 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: S-CoreDream;
 }
 
 body {
@@ -80,15 +82,19 @@ body {
   height : 100%;
 
   background-color: #d0d0d0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .business-card-wrap {
   width: 290px; height: 466px;
 
   position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  transition: transform 100ms;
+
+  transform: rotateX(0deg) rotateY(0) rotateZ(0);
 }
 
 .business-card-wrap * {
@@ -208,4 +214,11 @@ body {
 
 .business-card-wrap.reverse .back {
   transform: rotateY(0deg);
+}
+
+.revers-card {
+  padding: 12px;
+  cursor: pointer;
+
+  margin-left: 100px;
 }

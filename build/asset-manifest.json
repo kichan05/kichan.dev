@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/new/static/css/main.250a4432.css",
-    "main.js": "/new/static/js/main.afd43ba8.js",
-    "static/js/787.3651d14a.chunk.js": "/new/static/js/787.3651d14a.chunk.js",
-    "static/media/edcan_typo.svg": "/new/static/media/edcan_typo.8bf3f22eea151fb6bc6eb62a12d24c64.svg",
-    "static/media/edcan.svg": "/new/static/media/edcan.aa18c534347aa1a2ec408a602cdf8641.svg",
-    "index.html": "/new/index.html",
-    "main.250a4432.css.map": "/new/static/css/main.250a4432.css.map",
-    "main.afd43ba8.js.map": "/new/static/js/main.afd43ba8.js.map",
-    "787.3651d14a.chunk.js.map": "/new/static/js/787.3651d14a.chunk.js.map"
+    "main.css": "/kichan.dev/static/css/main.250a4432.css",
+    "main.js": "/kichan.dev/static/js/main.926c850e.js",
+    "static/js/787.3651d14a.chunk.js": "/kichan.dev/static/js/787.3651d14a.chunk.js",
+    "static/media/edcan_typo.svg": "/kichan.dev/static/media/edcan_typo.8bf3f22eea151fb6bc6eb62a12d24c64.svg",
+    "static/media/edcan.svg": "/kichan.dev/static/media/edcan.aa18c534347aa1a2ec408a602cdf8641.svg",
+    "index.html": "/kichan.dev/index.html",
+    "main.250a4432.css.map": "/kichan.dev/static/css/main.250a4432.css.map",
+    "main.926c850e.js.map": "/kichan.dev/static/js/main.926c850e.js.map",
+    "787.3651d14a.chunk.js.map": "/kichan.dev/static/js/787.3651d14a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.250a4432.css",
-    "static/js/main.afd43ba8.js"
+    "static/js/main.926c850e.js"
   ]
 }
