@@ -1,12 +1,14 @@
 import "./style/font_s_core.css"
 import './style/App.css';
-import {BusinessCardPage} from "./component/BusinessCardPage";
+import { FirstSection } from "./component/FirstSection";
+import { BusinessCardSection } from "./component/BusinessCardSection";
 
 
 function App() {
   return (
     <div className="App">
-      <BusinessCardPage/>
+      <FirstSection/>
+      <BusinessCardSection/>
     </div>
   );
 }

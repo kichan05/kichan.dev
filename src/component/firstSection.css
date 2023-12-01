@@ -1,0 +1,190 @@
+.first-section {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.first-section .bg {
+    width: 100%;
+    height: 100vh;
+
+    background: rgb(76, 45, 254);
+    background: linear-gradient(120deg, rgba(76, 45, 254, 0.642691415313225) 17%, rgba(0, 58, 255, 0.877030162412993) 100%);
+
+    animation-name: bg-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.first-section .arrow {
+    width: 40px;
+
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    z-index: 2;
+
+    transform: translateX(-50%);
+
+    animation: show-opacity 1200ms 2700ms 1 normal ease-in-out backwards, down-arrow-move-animation 2000ms 3500ms ease-in-out infinite;
+}
+
+@keyframes down-arrow-move-animation {
+    0%, 100% {
+        transform: translate(-50%, 0px);
+    }
+    50% {
+        transform: translate(-50%, 45px);
+    }
+}
+
+.first-section .content {
+    position: absolute;
+
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first-section .title * {
+    animation-duration: 800ms;
+    animation-fill-mode: backwards;
+}
+
+.first-section .title h1 {
+    font-size: 2em;
+    font-weight: 700;
+
+    animation-name: show-left;
+}
+
+.first-section .title h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+
+    animation-name: show-right;
+}
+
+.first-section .title .title1 {
+    animation-delay: 300ms;
+}
+
+.first-section .title .title2 {
+    animation-delay: 1000ms;
+}
+
+.first-section .title .title3 {
+    animation-delay: 1700ms;
+}
+
+.first-section .message {
+    font-size: 30px;
+
+    margin-top: 20px;
+
+    animation-name: show-opacity;
+    animation-duration: 1200ms;
+    animation-delay: 2700ms;
+    animation-fill-mode: backwards;
+}
+
+.first-section .message p {
+    font-size: 0.7em;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.first-section .link {
+    margin-top: 10px;
+
+    animation-name: show-opacity;
+    animation-duration: 1200ms;
+    animation-delay: 2700ms;
+    animation-fill-mode: backwards;
+}
+
+.first-section .link a {
+    text-decoration: none;
+    margin: auto 6px;
+    cursor: pointer;
+}
+
+
+.first-section .link a > * {
+    width: 32px;
+
+    fill: #282828;
+    stroke: #282828;
+
+    transition: 250ms;
+}
+
+.first-section .link a > *:hover {
+    transform: scale(1.25) rotateZ(5deg);
+}
+
+@keyframes show-left {
+    from {
+        transform: translateX(-70%) scaleY(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes show-right {
+    from {
+        transform: translateX(70%) scaleY(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes show-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@media (max-width: 500px) {
+    .first-section .title {
+        font-size: 20px;
+    }
+
+    .first-section .message {
+        font-size: 24px;
+    }
+
+    .first-section .link a > * {
+        width: 20px;
+    }
+}

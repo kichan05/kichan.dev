@@ -1,15 +1,15 @@
-import "./businessCard.css"
+import style from "./businessCardSection.css"
 
 import { useState } from "react";
 import edcanLogo from "../assets/edcan.svg";
 import edcanTypo from "../assets/edcan_typo.svg";
 
-export function BusinessCardPage() {
+export function BusinessCardSection() {
   const [isReverse, setIsReverse] = useState(false)
   const [businessCardXDeg, setBusinessCardXDeg] = useState(0.0)
   const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
 
-  return <section className="business-card-page">
+  return <section style={style} className="business-card-section full-section">
     <div className={`business-card-wrap ${isReverse ? "reverse" : ""}`}
          style={{transform : `rotateX(${businessCardXDeg}deg) rotateY(${businessCardYDeg}deg)`}}
          onMouseMove={(event) => {

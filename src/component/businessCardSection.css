@@ -1,4 +1,4 @@
-.business-card-page {
+.business-card-section {
   width : 100%;
   height : 100%;
 
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.business-card-wrap {
+.business-card-section .business-card-wrap {
   width: 280px; height: 466px;
 
   position: relative;
@@ -18,14 +18,14 @@
   transform: rotateX(0deg) rotateY(0) rotateZ(0);
 }
 
-.business-card-wrap * {
+.business-card-section .business-card-wrap * {
   font-family: S-CoreDream;
 
   position: relative;
   z-index: 999;
 }
 
-.front, .back {
+.business-card-section .front, .back {
   width: 100%;
   height: 100%;
 
@@ -39,11 +39,11 @@
   backface-visibility: hidden;
 }
 
-.front {
+.business-card-section .front {
   padding: 20px 16px 16px;
 }
 
-.circle {
+.business-card-section .circle {
   width: 500px; height: 500px;
 
   border-radius: 400px;
@@ -55,44 +55,44 @@
   z-index: 1;
 }
 
-.edcan-logo-wrap {
+.business-card-section .edcan-logo-wrap {
   text-align: right;
 }
 
-.edcan-logo-wrap img {
+.business-card-section .edcan-logo-wrap img {
   width: 80px;
 }
 
-.name-wrap h2 {
+.business-card-section .name-wrap h2 {
   font-weight: 600;
   font-size: 22px;
 }
 
-.name-wrap h3 {
+.business-card-section .name-wrap h3 {
   font-weight: 300;
   font-size: 14px;
 }
 
-.content-wrap {
+.business-card-section .content-wrap {
   margin-top: 24px;
   padding: 4px 8px;
   border-left: 3px solid #676767;
 }
 
-.content-wrap .title {
+.business-card-section .content-wrap .title {
   font-size: 12px;
   font-weight: 500;
 }
 
-.content-wrap > div:not(:last-child) {
+.business-card-section .content-wrap > div:not(:last-child) {
   margin-bottom: 16px;
 }
 
-.content-wrap .content {
+.business-card-section .content-wrap .content {
   font-size: 12px;
 }
 
-.dots {
+.business-card-section .dots {
   padding: 50px 0;
 
   display: flex;
@@ -102,21 +102,21 @@
   align-items: center;
 }
 
-.dots .dot {
+.business-card-section .dots .dot {
   width: 7px; height: 7px;
   background-color: #676767;
   border-radius: 100%;
 }
 
-.bottom {
+.business-card-section .bottom {
   text-align: center;
 }
 
-.bottom img {
+.business-card-section .bottom img {
   width: 100px;
 }
 
-.back {
+.business-card-section .back {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,7 +124,7 @@
   transform: rotateY(180deg);
 }
 
-.back img {
+.business-card-section .back img {
   width: 170px;
 }
 
@@ -136,19 +136,9 @@
   transform: rotateY(0deg);
 }
 
-.revers-card {
+.business-card-section .revers-card {
   padding: 12px;
   cursor: pointer;
 
   margin-left: 100px;
-}
-
-.mouse-pointer {
-  width: 20px; height: 20px;
-  border-radius: 100%;
-  background-color: #ff0000;
-
-  position: absolute;
-
-  transform: translate(-50%, -50%);
 }
