@@ -33,8 +33,9 @@
     z-index: 2;
 
     transform: translateX(-50%);
-
     animation: show-opacity 1200ms 2700ms 1 normal ease-in-out backwards, down-arrow-move-animation 2000ms 3500ms ease-in-out infinite;
+
+    cursor: pointer;
 }
 
 @keyframes down-arrow-move-animation {

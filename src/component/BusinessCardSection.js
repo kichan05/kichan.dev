@@ -10,7 +10,6 @@ export function BusinessCardSection() {
   const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
 
   return <section style={style} className="business-card-section full-section">
-    {/*<div className="top-header"></div>*/}
     <div className={`business-card-wrap ${isReverse ? "reverse" : ""}`}
          style={{transform : `rotateX(${businessCardXDeg}deg) rotateY(${businessCardYDeg}deg)`}}
          onMouseMove={(event) => {

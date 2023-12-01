@@ -7,7 +7,7 @@ export function FirstSection() {
     <div className="bg"/>
     <img className="arrow" src={downArrow} alt="아래쪽 화살표"
       onClick={()=>{
-        scrollTo({
+        window.scrollTo({
           top : window.innerHeight,
           left : 0,
           behavior : "smooth"
