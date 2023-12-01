@@ -5,7 +5,14 @@ import downArrow from "./../assets/down_arrow.svg"
 export function FirstSection() {
   return <section style={style} className="first-section">
     <div className="bg"/>
-    <img className="arrow" src={downArrow} alt="아래쪽 화살표"/>
+    <img className="arrow" src={downArrow} alt="아래쪽 화살표"
+      onClick={()=>{
+        scrollTo({
+          top : window.innerHeight,
+          left : 0,
+          behavior : "smooth"
+        })
+      }}/>
 
     <div className="content">
       <div className="title">
