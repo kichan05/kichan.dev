@@ -1,15 +1,17 @@
-import {useState} from "react";
-import edcanLogo from "../edcan.svg";
-import edcanTypo from "../edcan_typo.svg";
+import "./businessCard.css"
+
+import { useState } from "react";
+import edcanLogo from "../assets/edcan.svg";
+import edcanTypo from "../assets/edcan_typo.svg";
 
 export function BusinessCardPage() {
   const [isReverse, setIsReverse] = useState(false)
-  const [businessCardXDegg, setBusinessCardXDegg] = useState(0.0)
-  const [businessCardYDegg, setBusinessCardYDegg] = useState(0.0)
+  const [businessCardXDeg, setBusinessCardXDeg] = useState(0.0)
+  const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
 
-  return <section className="page1">
+  return <section className="business-card-page">
     <div className={`business-card-wrap ${isReverse ? "reverse" : ""}`}
-         style={{transform : `rotateX(${businessCardXDegg}deg) rotateY(${businessCardYDegg}deg)`}}
+         style={{transform : `rotateX(${businessCardXDeg}deg) rotateY(${businessCardYDeg}deg)`}}
          onMouseMove={(event) => {
            const {left, top, width, height} = event.currentTarget.getBoundingClientRect()
            const {clientX, clientY} = event
@@ -22,15 +24,15 @@ export function BusinessCardPage() {
            const xHalfDistance = Math.abs(halfWidth - x)
            const yHalfDistance = Math.abs(halfHeight - y)
 
-           let xDegree = 26 * xHalfDistance / halfWidth * (y < halfHeight ? 1 : -1)
-           let yDegree = 26 * yHalfDistance / halfHeight * (x < halfWidth ? 1 : -1)
+           let xDegree = 30 * xHalfDistance / halfWidth * (y < halfHeight ? 1 : -1)
+           let yDegree = 30 * yHalfDistance / halfHeight * (x < halfWidth ? 1 : -1)
 
-           setBusinessCardXDegg(xDegree)
-           setBusinessCardYDegg(yDegree)
+           setBusinessCardXDeg(xDegree)
+           setBusinessCardYDeg(yDegree)
          }}
-         onMouseOut={(event) => {
-           setBusinessCardXDegg(0)
-           setBusinessCardYDegg(0)
+         onMouseOut={() => {
+           setBusinessCardXDeg(0)
+           setBusinessCardYDeg(0)
          }}
       >
       <div className="front">
@@ -77,6 +79,6 @@ export function BusinessCardPage() {
 
     <div className="btn revers-card"
       onClick={() => {setIsReverse(!isReverse)}}
-    >명함 뒤지기</div>
+    >명함 뒤집기</div>
   </section>;
 }

@@ -1,0 +1,18 @@
+
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: S-CoreDream;
+}
+
+body {
+  height: 100vh;
+}
+
+#root, .App {
+  height : 100%;
+}
+
+
