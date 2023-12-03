@@ -8,11 +8,11 @@
 
 .first-section .bg {
     width: 100%;
-    height: calc(100% + 300px);
+    height: calc(100% + 150px);
 
     background: rgb(76, 45, 254);
     background: linear-gradient(120deg, #826fed 17%, #1f52ff 100%);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 300px));
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 150px));
 
     animation-name: bg-animation;
     animation-duration: 1s;

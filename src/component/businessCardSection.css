@@ -1,18 +1,18 @@
 .business-card-section {
-  background-color: #d0d0d0;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .business-card-section .business-card-wrap {
-  width: 280px; height: 466px;
+  width: 280px; height: 480px;
 
   position: relative;
   transition: transform 150ms;
 
   transform: rotateX(0deg) rotateY(0) rotateZ(0);
+
+  user-select: none;
 }
 
 .business-card-section .business-card-wrap * {

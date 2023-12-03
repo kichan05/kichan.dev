@@ -1,14 +1,26 @@
-
 * {
   margin : 0;
   padding: 0;
   box-sizing: border-box;
 
+  text-decoration: none;
+
   font-family: S-CoreDream;
+}
+
+*::selection {
+  color: white;
+  background-color: rgba(9, 40, 80, 0.63);
+}
+
+a {
+  color: black;
 }
 
 body {
   height: 100vh;
+
+  background-color: #b9b9b9;
 }
 
 #root, .App {
@@ -21,4 +33,8 @@ section {
   height: 100%;
 
   position: relative;
+}
+
+.pointer {
+  cursor: pointer;
 }
