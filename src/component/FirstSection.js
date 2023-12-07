@@ -3,7 +3,7 @@ import style from "./firstSection.css"
 import downArrow from "./../assets/down_arrow.svg"
 
 export function FirstSection() {
-  return <section style={style} className="first-section">
+  return <section className="first-section">
     <div className="bg"/>
     <img className="arrow" src={downArrow} alt="아래쪽 화살표"
       onClick={()=>{

@@ -60,6 +60,7 @@
 }
 
 .first-section .title * {
+    font-family: "Pretendard-Regular";
     animation-duration: 800ms;
     animation-fill-mode: backwards;
 }
@@ -92,6 +93,8 @@
 
 .first-section .message {
     font-size: 30px;
+    font-weight: 100;
+    font-family: 'Pretendard-Regular';
 
     margin-top: 20px;
 

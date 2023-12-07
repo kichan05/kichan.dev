@@ -5,9 +5,13 @@ import edcanLogo from "../assets/edcan.svg";
 import edcanTypo from "../assets/edcan_typo.svg";
 
 export function BusinessCardSection() {
-  const [isReverse, setIsReverse] = useState(false)
-  const [businessCardXDeg, setBusinessCardXDeg] = useState(0.0)
-  const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
+  // const [isReverse, setIsReverse] = useState(false)
+  // const [businessCardXDeg, setBusinessCardXDeg] = useState(0.0)
+  // const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
+
+  const [businessCardState, setBusinessCardState] = useState({
+    isReverse: false, xDeg: 0.0, yDeg: 0.0
+  })
 
   function cardMouseMove(event) {
     const {left, top, width, height} = event.currentTarget.getBoundingClientRect()
@@ -24,17 +28,19 @@ export function BusinessCardSection() {
     let xDegree = 30 * xHalfDistance / halfWidth * (y < halfHeight ? 1 : -1)
     let yDegree = 30 * yHalfDistance / halfHeight * (x < halfWidth ? 1 : -1)
 
-    setBusinessCardXDeg(xDegree)
-    setBusinessCardYDeg(yDegree)
+    setBusinessCardState(prev => {
+      return {...prev, xDeg: xDegree, yDeg: yDegree}
+    })
   }
 
   return <section style={style} className="business-card-section full-section">
-    <div className={`business-card-wrap ${isReverse ? "reverse" : ""}`}
-         style={{transform: `rotateX(${businessCardXDeg}deg) rotateY(${businessCardYDeg}deg)`}}
+    <div className={`business-card-wrap ${businessCardState.isReverse ? "reverse" : ""}`}
+         style={{transform: `rotateX(${businessCardState.xDeg}deg) rotateY(${businessCardState.yDeg}deg)`}}
          onMouseMove={cardMouseMove}
          onMouseOut={() => {
-           setBusinessCardXDeg(0)
-           setBusinessCardYDeg(0)
+           setBusinessCardState(prev => {
+             return {...prev, xDeg: 0, yDeg: 0}
+           })
          }}
     >
       <div className="front">
@@ -88,7 +94,9 @@ export function BusinessCardSection() {
 
     <div className="btn revers-card"
          onClick={() => {
-           setIsReverse(!isReverse)
+           setBusinessCardState(prev => {
+             return {...prev, isReverse: !prev.isReverse}
+           })
          }}
     >명함 뒤집기
     </div>
