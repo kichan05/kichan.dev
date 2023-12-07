@@ -1,13 +1,17 @@
 import style from "./businessCardSection.css"
 
-import {useState} from "react";
+import {useContext, useState} from "react";
 import edcanLogo from "../assets/edcan.svg";
 import edcanTypo from "../assets/edcan_typo.svg";
+
+import { UiDispatch } from "../App";
 
 export function BusinessCardSection() {
   // const [isReverse, setIsReverse] = useState(false)
   // const [businessCardXDeg, setBusinessCardXDeg] = useState(0.0)
   // const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
+
+  const uiDispatch = useContext(UiDispatch)
 
   const [businessCardState, setBusinessCardState] = useState({
     isReverse: false, xDeg: 0.0, yDeg: 0.0
@@ -38,9 +42,9 @@ export function BusinessCardSection() {
          style={{transform: `rotateX(${businessCardState.xDeg}deg) rotateY(${businessCardState.yDeg}deg)`}}
          onMouseMove={cardMouseMove}
          onMouseOut={() => {
-           setBusinessCardState(prev => {
-             return {...prev, xDeg: 0, yDeg: 0}
-           })
+           setBusinessCardState(prev => (
+             {...prev, xDeg: 0, yDeg: 0}
+           ))
          }}
     >
       <div className="front">
@@ -63,6 +67,7 @@ export function BusinessCardSection() {
             </div>
             <div className="mail-content content">
               <span className="pointer" onClick={() => {
+                uiDispatch({title : "이메일 복사 완료", message : "이메일 복사됨"})
                 navigator.clipboard.writeText("ckstmznf@naver.com")
               }}>ckstmznf@naver.com</span>
             </div>
