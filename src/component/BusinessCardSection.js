@@ -4,13 +4,9 @@ import {useContext, useState} from "react";
 import edcanLogo from "../assets/edcan.svg";
 import edcanTypo from "../assets/edcan_typo.svg";
 
-import { UiDispatch } from "../App";
+import {UiDispatch} from "../App";
 
 export function BusinessCardSection() {
-  // const [isReverse, setIsReverse] = useState(false)
-  // const [businessCardXDeg, setBusinessCardXDeg] = useState(0.0)
-  // const [businessCardYDeg, setBusinessCardYDeg] = useState(0.0)
-
   const uiDispatch = useContext(UiDispatch)
 
   const [businessCardState, setBusinessCardState] = useState({
@@ -38,15 +34,15 @@ export function BusinessCardSection() {
   }
 
   return <section style={style} className="business-card-section full-section">
-    <div className={`business-card-wrap ${businessCardState.isReverse ? "reverse" : ""}`}
-         style={{transform: `rotateX(${businessCardState.xDeg}deg) rotateY(${businessCardState.yDeg}deg)`}}
-         onMouseMove={cardMouseMove}
-         onMouseOut={() => {
-           setBusinessCardState(prev => (
-             {...prev, xDeg: 0, yDeg: 0}
-           ))
-         }}
-    >
+    <div
+      className={`business-card-wrap ${businessCardState.isReverse ? "reverse" : ""}`}
+      style={{transform: `rotateX(${businessCardState.xDeg}deg) rotateY(${businessCardState.yDeg}deg)`}}
+      onMouseMove={cardMouseMove}
+      onMouseOut={() => {
+        setBusinessCardState(prev => (
+          {...prev, xDeg: 0, yDeg: 0}
+        ))
+      }}>
       <div className="front">
         <div className="edcan-logo-wrap">
           <img src={edcanLogo} alt="EDCAN 로고"/>
@@ -67,7 +63,10 @@ export function BusinessCardSection() {
             </div>
             <div className="mail-content content">
               <span className="pointer" onClick={() => {
-                uiDispatch({title : "이메일 복사 완료", message : "이메일 복사됨"})
+                uiDispatch({
+                  type: "TOAST_APPEND",
+                  toast: {title: "이메일 복사 완료", message: "이메일 복사됨"}
+                })
                 navigator.clipboard.writeText("ckstmznf@naver.com")
               }}>ckstmznf@naver.com</span>
             </div>
