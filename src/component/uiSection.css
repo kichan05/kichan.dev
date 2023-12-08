@@ -19,38 +19,3 @@
     top : 0;
     right : 0;
 }
-
-.ui-section .toast-message {
-    width : 400px;
-    background-color: #80ffa4;
-
-    padding: 12px 16px;
-    margin-bottom: 8px;
-
-    animation: toast-message-enter 500ms 0s;
-}
-
-.ui-section .toast-message .title {
-    display: inline-block;
-    color : #1f52ff;
-}
-
-.ui-section .toast-message .header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.ui-section .toast-message .close-btn {
-    cursor: pointer;
-    pointer-events: auto;
-}
-
-@keyframes toast-message-enter {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}

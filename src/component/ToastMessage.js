@@ -1,9 +1,10 @@
-import React, {useContext, useEffect} from "react";
-import ic_x from "../assets/ic_x.svg";
-
+import React, {useContext, useEffect, useState} from "react";
 import {UiDispatch} from "../App";
 
-const ToastMessage = ({toast}) => {
+import ic_x from "../assets/ic_x.svg";
+import "./toastMessage.css"
+
+const ToastMessage = ({ toast }) => {
   const uiDispatch = useContext(UiDispatch)
 
   useEffect(() => {
@@ -17,9 +18,9 @@ const ToastMessage = ({toast}) => {
   }, [])
 
   return (
-    <div className="toast-message">
+    <div className={`toast-message`}>
       <div className="header">
-        <h3 className="title">{toast.id} {toast.title}</h3>
+        <h3 className="title">{toast.title}</h3>
         <img className="close-btn"
              src={ic_x} alt="알림 닫기"
              onClick={() => {
