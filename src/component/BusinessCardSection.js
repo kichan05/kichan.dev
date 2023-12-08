@@ -65,7 +65,10 @@ export function BusinessCardSection() {
               <span className="pointer" onClick={() => {
                 uiDispatch({
                   type: "TOAST_APPEND",
-                  toast: {title: "이메일 복사 완료", message: "이메일 복사됨"}
+                  toast: {
+                    title: "이메일 복사 완료",
+                    message: "이메일 복사됨",
+                  },
                 })
                 navigator.clipboard.writeText("ckstmznf@naver.com")
               }}>ckstmznf@naver.com</span>

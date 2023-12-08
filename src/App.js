@@ -7,40 +7,38 @@ import {BusinessCardSection} from "./component/BusinessCardSection";
 import {PortfolioSection} from "./component/PortfolioSection";
 import {UiSection} from "./component/UiSection";
 
-import {useReducer, useRef, useState} from "react";
+import { useReducer } from "react";
 import React from "react";
 
 export const UiDispatch = React.createContext(null)
 
-function uiReducer(state, action){
+function uiReducer(state, action) {
   switch (action.type) {
     case "TOAST_APPEND":
       return {
         ...state,
-        toastMessage : state.toastMessage.concat({
+        toastMessage: state.toastMessage.concat({
           ...action.toast,
-          id : state.toastId
+          id: state.toastId,
         }),
-        toastId : state.toastId + 1
+        toastId: state.toastId + 1
       }
     case "TOAST_REMOVE":
-      console.log(action.toastId, "삭제")
       return {
         ...state,
-        toastMessage : state.toastMessage.filter(i => i.id !== action.toastId)
+        toastMessage: state.toastMessage.filter(i => i.id !== action.toastId)
       }
   }
 }
 
-
 function App() {
-  const [uiState, dispatch] = useReducer(uiReducer, {
-    toastMessage: [], toastId : 0
+  const [uiState, uiDispatch] = useReducer(uiReducer, {
+    toastMessage: [], toastId: 0
   })
 
   return (
     <div className="App">
-      <UiDispatch.Provider value={dispatch}>
+      <UiDispatch.Provider value={uiDispatch}>
         <FirstSection/>
         <BusinessCardSection/>
         <PortfolioSection/>
