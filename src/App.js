@@ -26,7 +26,9 @@ function uiReducer(state, action) {
     case "TOAST_REMOVE":
       return {
         ...state,
-        toastMessage: state.toastMessage.filter(i => i.id !== action.toastId)
+        toastMessage: state.toastMessage.filter(i =>
+          i.id !== action.toastId
+        )
       }
   }
 }
