@@ -23,6 +23,12 @@ function uiReducer(state, action){
         }),
         toastId : state.toastId + 1
       }
+    case "TOAST_REMOVE":
+      console.log(action.toastId, "삭제")
+      return {
+        ...state,
+        toastMessage : state.toastMessage.filter(i => i.id !== action.toastId)
+      }
   }
 }
 

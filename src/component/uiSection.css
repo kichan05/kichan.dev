@@ -31,7 +31,18 @@
 }
 
 .ui-section .toast-message .title {
+    display: inline-block;
     color : #1f52ff;
+}
+
+.ui-section .toast-message .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ui-section .toast-message .close-btn {
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 @keyframes toast-message-enter {
