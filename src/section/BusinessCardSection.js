@@ -12,6 +12,8 @@ export function BusinessCardSection() {
     isReverse: false, xDeg: 0.0, yDeg: 0.0
   })
 
+  const [mouseEddectState, setmouseEddectState] = useState({left : 0, top : 0})
+
   function cardMouseMove(event) {
     const {left, top, width, height} = event.currentTarget.getBoundingClientRect()
     const {clientX, clientY} = event
@@ -23,6 +25,7 @@ export function BusinessCardSection() {
     const yDeg = Math.round(20 - 40 / width * x)
 
     setCardState({...cardState, xDeg, yDeg})
+    setmouseEddectState({left : x, top : y})
   }
 
   const emailCopy = () => {
@@ -48,6 +51,7 @@ export function BusinessCardSection() {
           setCardState({...cardState, xDeg: 0, yDeg: 0})
         }}
         onEmailCopy={emailCopy}
+        mouseState={mouseEddectState}
       />
 
       <div

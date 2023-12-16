@@ -2,13 +2,16 @@ import classNames from "classnames";
 import edcanLogo from "../assets/edcan.svg";
 import edcanTypo from "../assets/edcan_typo.svg";
 
-export const BusinessCard = ({cardState, onMouseMove, onMouseOut, onEmailCopy}) => {
+export const BusinessCard = ({
+ cardState, mouseState, onMouseMove, onMouseOut, onEmailCopy,
+ }) => {
+  const cardStyle = {
+    transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
+  };
   return (
     <div
       className={classNames("business-card-wrap", {reverse: cardState.isReverse})}
-      style={{
-        transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
-      }}
+      style={cardStyle}
       onMouseMove={onMouseMove}
       onMouseOut={onMouseOut}>
       <div className="front">
@@ -51,9 +54,15 @@ export const BusinessCard = ({cardState, onMouseMove, onMouseOut, onEmailCopy}) 
           <img src={edcanTypo} alt=""/>
         </div>
         <div className="circle"></div>
+        <div
+          className="mouse-effect"
+          style={mouseState}></div>
       </div>
       <div className="back">
         <img src={edcanTypo} alt="EDCAN 로고"/>
+        <div
+          className="mouse-effect"
+          style={mouseState}></div>
       </div>
     </div>
   )
