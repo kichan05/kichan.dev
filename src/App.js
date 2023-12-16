@@ -1,14 +1,11 @@
 import "./style/font_s_core.css"
 import "./style/font_pretendard.css"
 import './style/App.css';
-
-import {FirstSection} from "./section/FirstSection";
-import {BusinessCardSection} from "./section/BusinessCardSection";
-import {PortfolioSection} from "./section/PortfolioSection";
 import {UiSection} from "./section/UiSection";
 
-import { useReducer } from "react";
-import React from "react";
+import React, {useReducer} from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {MainPage} from "./page/MainPage";
 
 export const UiDispatch = React.createContext(null)
 
@@ -41,9 +38,11 @@ function App() {
   return (
     <div className="App">
       <UiDispatch.Provider value={uiDispatch}>
-        <FirstSection/>
-        <BusinessCardSection/>
-        <PortfolioSection/>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<MainPage/>}/>
+          </Routes>
+        </BrowserRouter>
         <UiSection toastMessage={uiState.toastMessage}/>
       </UiDispatch.Provider>
     </div>

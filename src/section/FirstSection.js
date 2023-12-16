@@ -1,17 +1,11 @@
-import style from "./firstSection.css"
-
 import downArrow from "../assets/down_arrow.svg"
-import {UiDispatch} from "../App";
-import {useContext} from "react";
+import "./firstSection.css"
 
 export function FirstSection() {
-
   return <section className="first-section">
     <div className="bg"/>
     <img className="arrow" src={downArrow} alt="아래쪽 화살표"
       onClick={()=>{
-        // const uiDispatch = useContext(UiDispatch)
-        // uiDispatch({type : "TOAST_APPEND", toast : {title : "a", message : "b", id:1}})
         window.scrollTo({
           top : window.innerHeight,
           left : 0,
