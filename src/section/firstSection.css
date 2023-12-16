@@ -8,7 +8,7 @@
 
 .first-section .bg {
     width: 100%;
-    height: calc(100% + 150px);
+    height: calc(var(--vh, 1vh) * 100 + 150px);
 
     background: rgb(76, 45, 254);
     background: linear-gradient(120deg, #826fed 17%, #1f52ff 100%);
@@ -47,7 +47,7 @@
     }
 }
 
-.first-section .content {
+.first-section .title-wrap {
     position: absolute;
 
     color: #ffffff;

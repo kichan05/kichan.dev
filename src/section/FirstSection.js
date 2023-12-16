@@ -13,7 +13,7 @@ export function FirstSection() {
         })
       }}/>
 
-    <div className="content">
+    <div className="title-wrap">
       <div className="title">
         <h2 className="title1">저는</h2>
         <h1 className="title2">박희찬</h1>
