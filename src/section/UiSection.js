@@ -1,5 +1,5 @@
 import "./uiSection.css"
-import ToastMessage from "./ToastMessage.js";
+import ToastMessage from "../component/ToastMessage.js";
 
 export const UiSection = ({toastMessage}) => {
   return (

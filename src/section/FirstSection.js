@@ -1,6 +1,6 @@
 import style from "./firstSection.css"
 
-import downArrow from "./../assets/down_arrow.svg"
+import downArrow from "../assets/down_arrow.svg"
 import {UiDispatch} from "../App";
 import {useContext} from "react";
 

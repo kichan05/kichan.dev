@@ -2,10 +2,10 @@ import "./style/font_s_core.css"
 import "./style/font_pretendard.css"
 import './style/App.css';
 
-import {FirstSection} from "./component/FirstSection";
-import {BusinessCardSection} from "./component/BusinessCardSection";
-import {PortfolioSection} from "./component/PortfolioSection";
-import {UiSection} from "./component/UiSection";
+import {FirstSection} from "./section/FirstSection";
+import {BusinessCardSection} from "./section/BusinessCardSection";
+import {PortfolioSection} from "./section/PortfolioSection";
+import {UiSection} from "./section/UiSection";
 
 import { useReducer } from "react";
 import React from "react";
