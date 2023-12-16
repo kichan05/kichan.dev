@@ -1,159 +1,31 @@
 .business-card-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
   align-items: center;
-}
-
-.business-card-section .business-card-wrap {
-  width: 300px; height: 514px;
-  display: inline-block;
-
-  position: relative;
-  transition: transform 150ms;
-
-  user-select: none;
-  overflow: hidden;
-}
-
-.business-card-section .business-card-wrap * {
-  font-family: S-CoreDream;
-
-  position: relative;
-  z-index: 999;
-}
-
-.business-card-section .front, .back {
-  width: 100%;
-  height: 100%;
-
-  background-color: white;
-
-  position: absolute;
-  top : 0%; left : 0%;
-
-  overflow: hidden;
-  transition: transform 1s;
-  backface-visibility: hidden;
-
-  box-shadow: 0px 0px 20px 1px rgb(147, 147, 147);
-}
-
-.business-card-section .front {
-  padding: 20px 16px 16px;
-}
-
-.business-card-section .circle {
-  width: 500px; height: 500px;
-
-  border-radius: 400px;
-  background-color: rgba(0, 174, 201, 0.25);
-
-  position: absolute;
-  left: 2px; top: 0;
-  transform: translateY(100px);
-  z-index: 1;
-}
-
-.business-card-section .edcan-logo-wrap {
-  text-align: right;
-}
-
-.business-card-section .edcan-logo-wrap img {
-  width: 80px;
-}
-
-.business-card-section .name-wrap h2 {
-  font-weight: 600;
-  font-size: 22px;
-}
-
-.business-card-section .name-wrap h3 {
-  font-weight: 300;
-  font-size: 14px;
-}
-
-.business-card-section .content-wrap {
-  margin-top: 24px;
-  padding: 4px 8px;
-  border-left: 3px solid #676767;
-}
-
-.business-card-section .content-wrap .title {
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.business-card-section .content-wrap > div:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.business-card-section .content-wrap .content {
-  font-size: 12px;
-}
-
-.business-card-section .dots {
-  padding: 50px 0;
-
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
   justify-content: center;
-  align-items: center;
 }
 
-.business-card-section .dots .dot {
-  width: 7px; height: 7px;
-  background-color: #676767;
-  border-radius: 100%;
-}
+.business-card-section .tmi-message {
+  color: #656565;
 
-.business-card-section .bottom {
-  text-align: center;
-}
+  font-size: 16px;
 
-.business-card-section .bottom img {
-  width: 100px;
-}
-
-.business-card-section .back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transform: rotateY(180deg);
-}
-
-.business-card-section .back img {
-  width: 170px;
-}
-
-.business-card-wrap.reverse .front {
-  transform: rotateY(-180deg);
-}
-
-.business-card-wrap.reverse .back {
-  transform: rotateY(0deg);
+  margin: 12px 0;
 }
 
 .business-card-section .revers-card {
   padding: 12px;
+
+  text-align: center;
   cursor: pointer;
 
-  margin-left: 100px;
+  display: flex;
+  align-items: center;
+
+  user-select: none;
 }
 
-.business-card-section .mouse-effect {
-  width: 100px;
-  height: 100px;
-
-  background: radial-gradient(circle, rgba(203, 203, 203, 0.3) 0%, rgba(203,203,203,0) 100%);
-  box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.32);
-  border-radius: 100%;
-
-  filter: contrast(150%) blur(3px) opacity(0.4) brightness(150%);
-
-  position: absolute;
-  transform: translate(-50%, -50%);
-
-  pointer-events: none;
+.business-card-section .revers-card span {
+  margin-left: 4px;
 }

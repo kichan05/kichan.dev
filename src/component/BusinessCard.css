@@ -1,0 +1,145 @@
+.business-card {
+    width: 300px; height: 490px;
+    display: inline-block;
+
+    position: relative;
+    transition: transform 150ms;
+
+    user-select: none;
+}
+
+.business-card * {
+    font-family: S-CoreDream;
+
+    position: relative;
+    z-index: 999;
+}
+
+.business-card .front, .business-card .back {
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+
+    position: absolute;
+    top: 0; left: 0;
+
+    overflow: hidden;
+    transition: transform 1s;
+    backface-visibility: hidden;
+
+    box-shadow: 0 2px 5px 1px rgba(185, 185, 185, 0.53);
+}
+
+.business-card .front {
+    padding: 20px 16px 16px;
+}
+
+.business-card .circle {
+    width: 500px; height: 500px;
+
+    border-radius: 400px;
+    background-color: rgba(0, 174, 201, 0.25);
+
+    position: absolute;
+    left: 0px; top: 0;
+    transform: translateY(100px);
+    z-index: 1;
+}
+
+.business-card .edcan-logo-wrap {
+    text-align: right;
+}
+
+.business-card .edcan-logo-wrap img {
+    width: 80px;
+}
+
+.business-card .name-wrap h2 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.business-card .name-wrap h3 {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.business-card .content-wrap {
+    margin-top: 24px;
+    padding: 4px 8px;
+    border-left: 3px solid #676767;
+}
+
+.business-card .content-wrap .title {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.business-card .content-wrap > div:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.business-card .content-wrap .content {
+    font-size: 12px;
+}
+
+.business-card .dots {
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.business-card .dot {
+    width: 7px; height: 7px;
+    background-color: #676767;
+    border-radius: 100%;
+}
+
+.business-card .bottom {
+    text-align: center;
+}
+
+.business-card .bottom img {
+    width: 100px;
+}
+
+.business-card .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: rotateY(180deg);
+}
+
+.business-card .back img {
+    width: 170px;
+}
+
+.business-card.reverse .front {
+    transform: rotateY(-180deg);
+}
+
+.business-card.reverse .back {
+    transform: rotateY(0deg);
+}
+
+.business-card .mouse-effect {
+    width: 100px;
+    height: 100px;
+
+    background: radial-gradient(circle, rgba(203, 203, 203, 0.3) 10%, rgba(203,203,203,0) 100%);
+    box-shadow: 0px 0px 100px 1px rgba(255, 255, 255, 0.55);
+    border-radius: 100%;
+
+    filter: contrast(150%) blur(3px) opacity(1) brightness(150%);
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}

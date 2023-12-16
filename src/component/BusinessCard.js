@@ -2,15 +2,32 @@ import classNames from "classnames";
 import edcanLogo from "../assets/edcan.svg";
 import edcanTypo from "../assets/edcan_typo.svg";
 
+import "./BusinessCard.css"
+import {UiDispatch} from "../App";
+import {useContext} from "react";
+
 export const BusinessCard = ({
- cardState, mouseState, onMouseMove, onMouseOut, onEmailCopy,
+ cardState, mouseState, onMouseMove, onMouseOut,
  }) => {
+  const uiDispatch = useContext(UiDispatch)
+
   const cardStyle = {
     transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
   };
+
+  const onEmailCopy = () => {
+    uiDispatch({
+      type: "TOAST_APPEND",
+      toast: {
+        title: "이메일 복사 완료",
+        message: "이메일이 복사 되었습니다.",
+      },
+    })
+    navigator.clipboard.writeText("ckstmznf@naver.com")
+  }
   return (
     <div
-      className={classNames("business-card-wrap", {reverse: cardState.isReverse})}
+      className={classNames("business-card", {reverse: cardState.isReverse})}
       style={cardStyle}
       onMouseMove={onMouseMove}
       onMouseOut={onMouseOut}>
