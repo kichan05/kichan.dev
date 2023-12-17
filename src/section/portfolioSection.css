@@ -52,9 +52,6 @@
 
     cursor: pointer;
 
-    display: flex;
-    align-items: center;
-
     padding: 2px 5px;
     border-radius: 20px;
 
@@ -62,6 +59,11 @@
     transition: 200ms;
 
     transform: translateX(-4px);
+}
+
+.portfolio-section .go-detail a {
+    display: flex;
+    align-items: center;
 }
 
 .portfolio-section .go-detail * {

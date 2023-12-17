@@ -6,6 +6,7 @@ import {UiSection} from "./section/UiSection";
 import React, {useEffect, useReducer} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {MainPage} from "./page/MainPage";
+import {PortfolioPage} from "./page/PortfolioPage";
 
 export const UiDispatch = React.createContext(null)
 
@@ -52,6 +53,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<MainPage/>}/>
+            <Route path={"/portfolio/:portfolilId"} element={<PortfolioPage/>}/>
             <Route path={"/kichan.dev"} element={<Test/>}/>
           </Routes>
         </BrowserRouter>
