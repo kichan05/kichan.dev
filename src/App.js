@@ -30,6 +30,12 @@ function uiReducer(state, action) {
   }
 }
 
+const Test = () => {
+  return (
+    <h1>Hello Test</h1>
+  )
+}
+
 function App() {
   useEffect(() => {
     const vh = window.innerHeight * 0.01
@@ -46,6 +52,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<MainPage/>}/>
+            <Route path={"/kichan.dev"} element={<Test/>}/>
           </Routes>
         </BrowserRouter>
         <UiSection toastMessage={uiState.toastMessage}/>

@@ -1,3 +1,80 @@
 .portfolio-section {
 
 }
+
+.portfolio-section .portfolio-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 25px;
+}
+
+.portfolio-section .portfolio-item {
+    height: 120px;
+
+    padding: 8px;
+
+    display: inline-flex;
+}
+
+.portfolio-section .portfolio-item .content-wrap {
+    margin-left: 24px;
+    padding-top: 5px;
+    display: inline-block;
+
+    position: relative;
+}
+
+.portfolio-section .portfolio-icon {
+    border-radius: 16px;
+
+    object-fit: cover;
+}
+
+.portfolio-section .portfolio-item .title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio-section .portfolio-item .title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.portfolio-section .portfolio-item .main-message {
+    font-size: 16px;
+
+    margin-top: 4px;
+}
+
+.portfolio-section .go-detail {
+    font-size: 12px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    padding: 2px 5px;
+    border-radius: 20px;
+
+    background-color: #f3f3f3;
+    transition: 200ms;
+
+    transform: translateX(-4px);
+}
+
+.portfolio-section .go-detail * {
+    color : #868e96;
+}
+
+.portfolio-section .go-detail:hover{
+    color : #495057;
+    box-shadow: 0 0 0 1px #adb5bd;
+
+    transform: translateX(0px);
+}
+
+.portfolio-section .go-detail svg {
+    font-size: 16px;
+}
