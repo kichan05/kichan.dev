@@ -9,11 +9,12 @@ export const PortfolioPage = () => {
   const portfolioData = portfolio[params.portfolilId]
 
   const handleScroll = (e) => {
-    const scaleRate = Math.max(0.95, -0.04 / 400 * window.scrollY + 1)
-    mockUpImage.current.style.transform = `scale(${scaleRate})`
+    const scaleRate = Math.min(30, window.scrollY / 10)
+    mockUpImage.current.style.width = `calc(100% - ${scaleRate}px)`
+    mockUpImage.current.style.height = `calc(100% - ${scaleRate}px)`
 
     if(window.scrollY > 0){
-      mockUpImage.current.style.borderRadius = `8px`
+      mockUpImage.current.style.borderRadius = `10px`
     }
     else {
       mockUpImage.current.style.borderRadius = `0px`
@@ -47,9 +48,18 @@ export const PortfolioPage = () => {
           <h1>Membeder</h1>
           <p>팀이 만들어지는곳 Membeder</p>
         </div>
-        <div className="content"></div>
-        <div className="content"></div>
-        <div className="content"></div>
+        <div className="content">
+          <h1>Membeder</h1>
+          <p>팀이 만들어지는곳 Membeder</p>
+        </div>
+        <div className="content">
+          <h1>Membeder</h1>
+          <p>팀이 만들어지는곳 Membeder</p>
+        </div>
+        <div className="content">
+          <h1>Membeder</h1>
+          <p>팀이 만들어지는곳 Membeder</p>
+        </div>
       </div>
     </section>
   )
