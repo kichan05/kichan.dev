@@ -1,0 +1,35 @@
+.portfolio-page {
+
+}
+
+.portfolio-page .bg-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  position: fixed;
+  z-index: -1;
+}
+
+.portfolio-page .bg-wrap .img {
+  width: 100%;
+  height: 100%;
+
+  /*background-color: #ff0000;*/
+}
+
+.portfolio-page .bg-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-page .detail .blank {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.portfolio-page .detail .content {
+  height: calc(var(--vh, 1vh) * 100);
+
+  background-color: rgba(176, 176, 176, 0.24);
+}

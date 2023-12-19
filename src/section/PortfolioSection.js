@@ -17,13 +17,13 @@ export function PortfolioSection() {
               <img
                 src={i.icon}
                 className="portfolio-icon" alt={`${i.name} 아이콘`}
-                style={{boxShadow: `0px 10px 15px 1px ${i.color}`}}
+                style={{boxShadow: `0px 15px 40px 0 ${i.color}`}}
               />
               <div className="content-wrap">
                 <div className="title-wrap">
                   <div className="title">{i.name}</div>
                   <div className={"go-detail"}>
-                    <Link to={`/portfolio/${i.id}`}>
+                    <Link to={`/portfolio/${i.id}`} lReset={false}>
                       <span>자세히보기</span>
                       <IoArrowForward/>
                     </Link>

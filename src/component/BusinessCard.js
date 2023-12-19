@@ -23,7 +23,7 @@ export const BusinessCard = ({
         message: "이메일이 복사 되었습니다.",
       },
     })
-    navigator.clipboard.writeText("ckstmznf@naver.com")
+    navigator.clipboard.writeText("me@kichan.dev")
   }
   return (
     <div
@@ -50,7 +50,7 @@ export const BusinessCard = ({
               MAIL
             </div>
             <div className="mail-content content">
-              <span className="pointer" onClick={onEmailCopy}>ckstmznf@naver.com</span>
+              <span className="pointer" onClick={onEmailCopy}>me@kichan.dev</span>
             </div>
           </div>
           <div className="link-wrap">
