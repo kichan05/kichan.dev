@@ -4,9 +4,10 @@ import './style/App.css';
 import {UiSection} from "./section/UiSection";
 
 import React, {useEffect, useReducer} from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
 import {MainPage} from "./page/MainPage";
 import {PortfolioPage} from "./page/PortfolioPage";
+import ScrollToTop from "./component/ScrollToTop";
 
 export const UiDispatch = React.createContext(null)
 
@@ -51,6 +52,7 @@ function App() {
     <div className="App">
       <UiDispatch.Provider value={uiDispatch}>
         <BrowserRouter>
+          <ScrollToTop/>
           <Routes>
             <Route index element={<MainPage/>}/>
             <Route path={"/portfolio/:portfolilId"} element={<PortfolioPage/>}/>

@@ -2,7 +2,6 @@ import {useParams} from "react-router-dom";
 import portfolio from "../data/Portfolio";
 import "./PortfolioPage.css"
 import {useEffect, useRef} from "react";
-import m from "./../assets/Membeder 목업.png"
 
 export const PortfolioPage = () => {
   const params = useParams()
@@ -11,8 +10,14 @@ export const PortfolioPage = () => {
 
   const handleScroll = (e) => {
     const scaleRate = Math.max(0.95, -0.04 / 400 * window.scrollY + 1)
-    console.log(window.scrollY, scaleRate)
     mockUpImage.current.style.transform = `scale(${scaleRate})`
+
+    if(window.scrollY > 0){
+      mockUpImage.current.style.borderRadius = `8px`
+    }
+    else {
+      mockUpImage.current.style.borderRadius = `0px`
+    }
   }
 
   useEffect(() => {
@@ -23,7 +28,7 @@ export const PortfolioPage = () => {
   })
 
   const mockupImageStyle = {
-    backgroundImage : `url(${m})`
+    backgroundImage : `url(${portfolioData.mockUp})`
   }
 
   return (
@@ -35,13 +40,13 @@ export const PortfolioPage = () => {
         <div
           style={mockupImageStyle}
           className="img" ref={mockUpImage}></div>
-        {/*<img*/}
-        {/*  ref={mockUpImage}*/}
-        {/*  src={portfolioData.mockUp} alt={`${portfolioData.name} 목업 이미지`}/>*/}
       </div>
       <div className="detail">
         <div className="blank"></div>
-        <div className="content"></div>
+        <div className="content">
+          <h1>Membeder</h1>
+          <p>팀이 만들어지는곳 Membeder</p>
+        </div>
         <div className="content"></div>
         <div className="content"></div>
         <div className="content"></div>
