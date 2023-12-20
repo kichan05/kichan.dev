@@ -28,7 +28,16 @@
 }
 
 .portfolio-page .detail .content {
-  height: calc(var(--vh, 1vh) * 100);
+  font-size: 20px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 
-  background-color: rgba(176, 176, 176, 0.24);
+  padding: 28px;
+
+  background: rgba( 255, 255, 255, 0.15 );
+  backdrop-filter: blur( 2px );
+}
+
+.portfolio-page .page1 h1 {
+  font-size: 2em;
 }

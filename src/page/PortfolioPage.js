@@ -1,17 +1,18 @@
 import {useParams} from "react-router-dom";
-import portfolio from "../data/Portfolio";
+import data from "../data/Portfolio";
 import "./PortfolioPage.css"
 import {useEffect, useRef} from "react";
+import {IoChevronBackOutline} from "react-icons/io5";
 
 export const PortfolioPage = () => {
   const params = useParams()
   const mockUpImage = useRef()
-  const portfolioData = portfolio[params.portfolilId]
+  const portfolioData = data.portfolio[params.portfolilId]
 
   const handleScroll = (e) => {
-    const scaleRate = Math.min(30, window.scrollY / 10)
-    mockUpImage.current.style.width = `calc(100% - ${scaleRate}px)`
-    mockUpImage.current.style.height = `calc(100% - ${scaleRate}px)`
+    const marginGap = Math.min(32, window.scrollY * 32 / 300)
+    mockUpImage.current.style.width = `calc(100% - ${marginGap}px)`
+    mockUpImage.current.style.height = `calc(100% - ${marginGap}px)`
 
     if(window.scrollY > 0){
       mockUpImage.current.style.borderRadius = `10px`
@@ -44,9 +45,11 @@ export const PortfolioPage = () => {
       </div>
       <div className="detail">
         <div className="blank"></div>
-        <div className="content">
+        <div className="content page1">
           <h1>Membeder</h1>
           <p>팀이 만들어지는곳 Membeder</p>
+
+          <p className="message1"></p>
         </div>
         <div className="content">
           <h1>Membeder</h1>

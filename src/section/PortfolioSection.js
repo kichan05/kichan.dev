@@ -1,40 +1,51 @@
 import './portfolioSection.css'
-import {useState} from "react";
-import {IoArrowForward} from "react-icons/io5";
-import portfolioList from "./../data/Portfolio"
-import {Link} from "react-router-dom";
+import data from "../data/Portfolio"
+import {PortfolioListItem} from "../component/PortfolioListItem";
+import What from "./../assets/what.png"
 
 export function PortfolioSection() {
-  const [portfolio, setPortfolio] = useState(portfolioList)
-
+  console.log(data)
   return (
     <section className="portfolio-section">
       <div className="content">
-        <h1>포트폴리오</h1>
-        <ul className="portfolio-list">
-          {portfolio.map(i => (
-            <li key={i.id} className="portfolio-item">
-              <img
-                src={i.icon}
-                className="portfolio-icon" alt={`${i.name} 아이콘`}
-                style={{boxShadow: `0px 15px 40px 0 ${i.color}`}}
-              />
-              <div className="content-wrap">
-                <div className="title-wrap">
-                  <div className="title">{i.name}</div>
-                  <div className={"go-detail"}>
-                    <Link to={`/portfolio/${i.id}`} lReset={false}>
-                      <span>자세히보기</span>
-                      <IoArrowForward/>
-                    </Link>
-                  </div>
-                </div>
+        <div className="portfolio-wrap">
+          <div className={"wrap-title"}>Portfolio</div>
+          <p className={"wrap-descript"}>제가 직접 공부하며 만든 작품들입니다.</p>
+          <ul className="portfolio-list">
+            {data.portfolio.map(i => (
+              <PortfolioListItem
+                portfolio={i}
+                detailPath={`/portfolio/${i.id}`}
+              >
                 <div className="main-message">{i.mainMessage}</div>
                 <div className="main-message">{i.role}</div>
+              </PortfolioListItem>
+            ))}
+          </ul>
+        </div>
+
+
+        <div className="aword-wrap">
+          <div className={"wrap-title"}>Aword</div>
+          <p className={"wrap-descript"}>제가 직접 경험하며 수상한 실적들입니다.</p>
+          <ul className="aword-list">
+            {data.aword.map(i => (
+              <PortfolioListItem
+                portfolio={i}
+              >
+                <div className="main-message">{i.year}년 / <span style={{color : "#571500"}}>{i.aword}</span></div>
+                <div className="main-message">{i.role}</div>
+                <div className="main-message">주최 : {i.host}</div>
+              </PortfolioListItem>
+            ))}
+            <li className="portfolio-item what-is-next">
+              <img src={What} alt="물음표 아이콘" className="icon"/>
+              <div className="content">
+                <span>What is Next?</span>
               </div>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
   )
