@@ -22,7 +22,6 @@ function App() {
         <Resize/>
 
         <UiContextProvider>
-          <Header/>
           <Page/>
           <Footer/>
           <UiSection/>
