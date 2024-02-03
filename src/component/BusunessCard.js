@@ -87,6 +87,10 @@ const BusinessCardStyle = styled.div`
   .content-wrap > div:not(:last-child) {
     margin-bottom: 16px;
   }
+  
+  .mail-content {
+    cursor: pointer;
+  }
 
   .content-wrap .content {
     font-size: 12px;
@@ -138,9 +142,9 @@ const BusinessCardStyle = styled.div`
   }
 `
 
-export const BusinessCard = () => {
+export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
   const cardStyle = {
-    // transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
+    transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
   };
 
   const onEmailCopy = () => {
@@ -148,7 +152,11 @@ export const BusinessCard = () => {
   }
 
   return (
-    <BusinessCardStyle>
+    <BusinessCardStyle
+      style={cardStyle}
+      onMouseMove={onMouseMove}
+      onMouseOut={onMouseOut}
+      className={cardState.isReverse && 'reverse'}>
       <div className="front">
         <div className="edcan-logo-wrap">
           <img src={edcanLogo} alt="EDCAN 로고"/>
