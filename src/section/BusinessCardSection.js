@@ -31,6 +31,7 @@ const BusinessCardSectionStyle = styled.section`
 
 export const BusinessCardSection = () => {
   const [cardState, setCardState] = useState({
+    x: 0, y: 0,
     xDeg : 0.0, yDeg: 0.0,
     isReverse : false
   })
@@ -44,8 +45,7 @@ export const BusinessCardSection = () => {
 
     const xDeg = Math.round(-25 + 50 / height * y)
     const yDeg = Math.round(20 - 40 / width * x)
-
-    setCardState({...cardState, xDeg, yDeg})
+    setCardState({...cardState, xDeg, yDeg, x, y})
   }
 
   const onMouseOut = () => {

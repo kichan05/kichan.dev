@@ -7,17 +7,16 @@ const BusinessCardStyle = styled.div`
   width: 300px;
   height: 490px;
   display: inline-block;
-  
+
   position: relative;
   transition: transform 150ms;
 
   user-select: none;
-  
+
   ${SCoreDream}
-  
   * {
     font-family: S-CoreDream;
-    
+
     position: relative;
     z-index: 999;
   }
@@ -27,9 +26,10 @@ const BusinessCardStyle = styled.div`
     height: 100%;
 
     background-color: white;
-
+    
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
 
     overflow: hidden;
     transition: transform 1s;
@@ -38,19 +38,20 @@ const BusinessCardStyle = styled.div`
     box-shadow: 0 2px 5px 1px rgba(185, 185, 185, 0.53);
   }
 
-
   .front {
     padding: 20px 16px 16px;
   }
 
   .circle {
-    width: 500px; height: 500px;
+    width: 500px;
+    height: 500px;
 
     border-radius: 400px;
     background-color: rgba(0, 174, 201, 0.25);
 
     position: absolute;
-    left: 0px; top: 0;
+    left: 0;
+    top: 0;
     transform: translateY(100px);
     z-index: 1;
   }
@@ -87,7 +88,7 @@ const BusinessCardStyle = styled.div`
   .content-wrap > div:not(:last-child) {
     margin-bottom: 16px;
   }
-  
+
   .mail-content {
     cursor: pointer;
   }
@@ -108,7 +109,8 @@ const BusinessCardStyle = styled.div`
   }
 
   .dot {
-    width: 7px; height: 7px;
+    width: 7px;
+    height: 7px;
     background-color: #676767;
     border-radius: 100%;
   }
@@ -133,6 +135,22 @@ const BusinessCardStyle = styled.div`
     width: 170px;
   }
 
+  .mouse-effect {
+    width: 100px;
+    height: 100px;
+
+    background: radial-gradient(circle, rgba(203, 203, 203, 0.3) 10%, rgba(203,203,203,0) 100%);
+    box-shadow: 0px 0px 100px 1px rgba(255, 255, 255, 0.55);
+    border-radius: 100%;
+
+    filter: contrast(150%) blur(3px) brightness(150%);
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+  }
+
   &.reverse .front {
     transform: rotateY(-180deg);
   }
@@ -146,6 +164,11 @@ export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
   const cardStyle = {
     transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
   };
+
+  const mouseEffectStyle = {
+    top: cardState.y,
+    left: cardState.x
+  }
 
   const onEmailCopy = () => {
     navigator.clipboard.writeText("me@kichan.dev")
@@ -197,15 +220,15 @@ export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
           <img src={edcanTypo} alt=""/>
         </div>
         <div className="circle"></div>
-        {/*<div*/}
-        {/*  className="mouse-effect"*/}
-        {/*  style={mouseState}></div>*/}
+        <div
+          className="mouse-effect"
+          style={mouseEffectStyle}></div>
       </div>
       <div className="back">
         <img src={edcanTypo} alt="EDCAN 로고"/>
-        {/*<div*/}
-        {/*  className="mouse-effect"*/}
-        {/*  style={mouseState}></div>*/}
+        <div
+          className="mouse-effect"
+          style={mouseEffectStyle}></div>
       </div>
     </BusinessCardStyle>
   )
