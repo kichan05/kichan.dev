@@ -22,7 +22,7 @@ export const showRight = keyframes`
   }
 `
 
-export const showOpacity = keyframes`
+export const animation = keyframes`
   from {
     opacity: 0;
   }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {downUp, showLeft, showOpacity, showRight} from "../style/showOpacity";
+import {downUp, showLeft, animation, showRight} from "../style/animation";
 import {GoChevronDown} from "react-icons/go";
 
 const FirstSectionStyle = styled.section`
@@ -56,7 +56,7 @@ const FirstSectionStyle = styled.section`
     margin-top: 12px;
     line-height: 24px;
 
-    animation-name: ${showOpacity};
+    animation-name: ${animation};
     animation-duration: 1200ms;
     animation-delay: 2700ms;
     animation-fill-mode: backwards;
@@ -65,7 +65,7 @@ const FirstSectionStyle = styled.section`
   .link {
     margin-top: 10px;
 
-    animation-name: ${showOpacity};
+    animation-name: ${animation};
     animation-duration: 1200ms;
     animation-delay: 2700ms;
     animation-fill-mode: backwards;
@@ -101,7 +101,7 @@ const FirstSectionStyle = styled.section`
     cursor: pointer;
     transform: translateX(-50%);
     
-    animation: ${showOpacity} 1200ms 2700ms 1 normal ease-in-out backwards, ${downUp} 2000ms 3500ms ease-in-out infinite;
+    animation: ${animation} 1200ms 2700ms 1 normal ease-in-out backwards, ${downUp} 2000ms 3500ms ease-in-out infinite;
   }
 `
 
