@@ -106,6 +106,14 @@ const FirstSectionStyle = styled.section`
 `
 
 export const FirstSection = () => {
+  const scrollDown = () => {
+    window.scrollTo({
+      left: 0,
+      top: window.innerHeight,
+      behavior: "smooth"
+    })
+  }
+
   return (
     <FirstSectionStyle>
       <div className="title-wrap">
@@ -144,7 +152,7 @@ export const FirstSection = () => {
         </div>
       </div>
 
-      <GoChevronDown className={"go-down"}/>
+      <GoChevronDown className={"go-down"} onClick={scrollDown}/>
     </FirstSectionStyle>
   )
 }
