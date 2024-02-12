@@ -192,7 +192,7 @@ export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
           <div className="tel-wrap">
             <div className="tel-title title">학력</div>
             <div className="tel-content content">선린인터넷고등학교</div>
-            <div className="tel-content content">소프트웨어과 재학 (2021~)</div>
+            <div className="tel-content content">소프트웨어과 졸업 (2021~2023)</div>
           </div>
           <div className="mail-wrap">
             <div className="mail-title title">
