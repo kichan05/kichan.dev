@@ -136,14 +136,14 @@ const BusinessCardStyle = styled.div`
   }
 
   .mouse-effect {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    aspect-ratio: 1/1;
 
     background: radial-gradient(circle, rgba(203, 203, 203, 0.3) 10%, rgba(203,203,203,0) 100%);
     box-shadow: 0px 0px 100px 1px rgba(255, 255, 255, 0.55);
     border-radius: 100%;
 
-    filter: contrast(150%) blur(3px) brightness(150%);
+    filter: contrast(150%) blur(3px);
 
     position: absolute;
     transform: translate(-50%, -50%);
