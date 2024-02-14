@@ -110,12 +110,11 @@ export const FirstSection = () => {
   const dispatch = useUiDispatch()
 
   const scrollDown = () => {
-    dispatch({type: UI_ACTION_TYPE.modal_show})
-    // window.scrollTo({
-    //   left: 0,
-    //   top: window.innerHeight,
-    //   behavior: "smooth"
-    // })
+    window.scrollTo({
+      left: 0,
+      top: window.innerHeight,
+      behavior: "smooth"
+    })
   }
 
   return (
