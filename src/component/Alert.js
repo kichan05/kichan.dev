@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {useEffect, useState} from "react";
 import { v4 } from "uuid";
 import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
 import {logDOM} from "@testing-library/react";
 import {GoX} from "react-icons/go";
 import {IconButton} from "./IconButton";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 const AlertStyle = styled.ul`
   display: inline-block;
@@ -23,6 +24,13 @@ const AlertMessageStyle = styled.li`
   border-radius: 0.25em;
   padding: 12px;
   margin-bottom: 8px;
+  
+  opacity: 1;
+  transition: opacity ${p => p.timeout}ms;
+
+  ${({state}) => (state === "entering" || state === "exiting") && css`
+    opacity: 0;
+  `}
   
   .title-wrap {
     display: flex;
@@ -49,7 +57,7 @@ const AlertMessageStyle = styled.li`
   }
 `
 
-const AlertMessage = ({message}) => {
+const AlertMessage = ({state, message, timeout}) => {
   const uiDispatch = useUiDispatch()
 
   const removeMessage = (id) => {
@@ -63,7 +71,7 @@ const AlertMessage = ({message}) => {
   }, [])
 
   return (
-    <AlertMessageStyle>
+    <AlertMessageStyle state={state} timeout={timeout}>
       <div className="title-wrap">
         <div className="title">{message.title}</div>
         <IconButton
@@ -82,9 +90,15 @@ const AlertMessage = ({message}) => {
 export const Alert = ({alertMessage}) => {
   return (
     <AlertStyle>
-      {alertMessage.map((message, index) => (
-        <AlertMessage key={message.id} message={message}/>
-      ))}
+      <TransitionGroup>
+        {alertMessage.map(message => (
+          <CSSTransition key={message.id} timeout={250}>
+            {state => (
+              <AlertMessage state={state} timeout={250} message={message}/>
+            )}
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
     </AlertStyle>
   )
 }
