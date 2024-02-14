@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {downUp, showLeft, animation, showRight} from "../style/animation";
 import {GoChevronDown} from "react-icons/go";
+import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
 
 const FirstSectionStyle = styled.section`
   width: 100%;
@@ -106,12 +107,15 @@ const FirstSectionStyle = styled.section`
 `
 
 export const FirstSection = () => {
+  const dispatch = useUiDispatch()
+
   const scrollDown = () => {
-    window.scrollTo({
-      left: 0,
-      top: window.innerHeight,
-      behavior: "smooth"
-    })
+    dispatch({type: UI_ACTION_TYPE.modal_show})
+    // window.scrollTo({
+    //   left: 0,
+    //   top: window.innerHeight,
+    //   behavior: "smooth"
+    // })
   }
 
   return (

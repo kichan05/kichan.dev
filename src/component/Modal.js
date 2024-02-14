@@ -1,7 +1,8 @@
-import styled, {keyframes} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 import Button from "./Button";
 import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
 import {useEffect, useState} from "react";
+import {CSSTransition} from "react-transition-group";
 
 const fadeIn = keyframes`
   0% {
@@ -59,9 +60,16 @@ const ModalStyle = styled.div`
   top: 0;
   left: 0;
 
-  animation-name: ${p => p.isShow ? fadeIn : fadeOut};
-  animation-duration: 250ms;
+  animation-duration: ${p=> p.timeout}ms;
   animation-timing-function: ease-out;
+  ${({state}) => css`
+    ${state === "entering" && css`
+      animation-name: ${fadeIn};
+    `}
+    ${state === "exiting" && css`
+      animation-name: ${fadeOut};
+    `}
+  `}
 `
 
 const ModalContent = styled.div`
@@ -72,23 +80,20 @@ const ModalContent = styled.div`
   border-radius: 8px;
   padding: 12px;
   
-  animation-name: ${p => p.isShow ? scaleUp : scaleDown};
-  animation-duration: 250ms;
+  animation-duration: ${p=> p.timeout}ms;
   animation-timing-function: ease-out;
+  ${({state}) => css`
+    ${state === "entering" && css`
+      animation-name: ${scaleUp};
+    `}
+    ${state === "exiting" && css`
+      animation-name: ${scaleDown};
+    `}
+  `}
 `
 
 const Modal = ({isShow}) => {
   const uiDispatch = useUiDispatch()
-  const [isAnimation, setIsAnimation] = useState(false)
-
-  useEffect(() => {
-    if (!isShow) {
-      setIsAnimation(true)
-      setTimeout(() => {
-        setIsAnimation(false)
-      }, 240)
-    }
-  }, [isShow])
 
   const closeModal = (e) => {
     if(e.target !== e.currentTarget)
@@ -97,12 +102,16 @@ const Modal = ({isShow}) => {
     uiDispatch({type: UI_ACTION_TYPE.modal_hide})
   }
 
-  return (isShow || isAnimation) && (
-    <ModalStyle onClick={closeModal} isShow={isShow}>
-      <ModalContent isShow={isShow}>
-        <Button onClick={closeModal}>닫기</Button>
-      </ModalContent>
-    </ModalStyle>
+  return (
+    <CSSTransition in={isShow} timeout={250} unmountOnExit>
+      {state => (
+        <ModalStyle onClick={closeModal} state={state} timeout={250}>
+          <ModalContent>
+            <Button onClick={closeModal}>닫기</Button>
+          </ModalContent>
+        </ModalStyle>
+      )}
+    </CSSTransition>
   )
 }
 
