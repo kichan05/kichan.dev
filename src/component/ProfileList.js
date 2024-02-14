@@ -39,7 +39,7 @@ const ProfileListStyle = styled.li`
     margin-top: 6px;
     font-size: 1.25em;
 
-    line-height: 19px;
+    line-height: 22px;
   }
 
   a {
