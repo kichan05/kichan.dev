@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {GoCommandPalette, GoDotFill, GoPin, GoTriangleRight} from "react-icons/go";
-import {BsBraces, BsFillPinFill} from "react-icons/bs";
+import {ProfileList} from "../component/ProfileList";
 
 const ProfileSectionStyle = styled.section`
   padding: 40px 24px;
@@ -22,66 +21,6 @@ const ProfileSectionStyle = styled.section`
     gap: 24px;
   }
 `
-
-const ProfileList = ({title, date, children}) => {
-  const ProfileListStyle = styled.li`
-    word-break: unset;
-    
-    .list-icon {
-      font-size: 14px;
-      margin: 2px 8px 1px 8px;
-    }
-
-    h3 {
-      color: ${p => p.theme.color.Gray9};
-      font-weight: 500;
-      font-size: 1.3em;
-
-      display: inline-block;
-    }
-
-    .date {
-      color: ${p => p.theme.color.Gray6};
-      font-size: 1em;
-
-      margin-left: 6px;
-    }
-
-    .description-wrap {
-      color: ${p => p.theme.color.Gray7};
-
-      padding-left: 30px;
-
-      margin-top: 5px;
-      font-size: 1.1em;
-
-      line-height: 19px;
-    }
-
-    a {
-      color: ${p => p.theme.color.HeechanBlue};
-      font-weight: 500;
-      transition: 100ms;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  `
-
-  return (
-    <ProfileListStyle>
-      <div className="title-wrap">
-        <BsFillPinFill className={"list-icon"}/>
-        <h3>{title}</h3>
-        <span className="date">{date}</span>
-      </div>
-      {children && <div className="description-wrap">
-        {children}
-      </div>}
-    </ProfileListStyle>
-  )
-}
 
 export const ProfileSection = () => {
   const profileData = [
