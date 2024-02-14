@@ -26,10 +26,17 @@ const AlertMessageStyle = styled.li`
   margin-bottom: 8px;
   
   opacity: 1;
-  transition: opacity ${p => p.timeout}ms;
+  transition: ${p => p.timeout}ms;
+  transform: translate(0, 0) rotateX(0deg);
 
-  ${({state}) => (state === "entering" || state === "exiting") && css`
+  ${({state}) => (state === "entering") && css`
     opacity: 0;
+    transform: translate(100px, 0);
+  `}
+
+  ${({state}) => (state === "exiting") && css`
+    opacity: 0;
+    transform: rotateX(-90deg);
   `}
   
   .title-wrap {
@@ -82,7 +89,6 @@ const AlertMessage = ({state, message, timeout}) => {
         ><GoX/></IconButton>
       </div>
       <p>{message.message}</p>
-      <p>{message.id}</p>
     </AlertMessageStyle>
   )
 }
@@ -92,9 +98,9 @@ export const Alert = ({alertMessage}) => {
     <AlertStyle>
       <TransitionGroup>
         {alertMessage.map(message => (
-          <CSSTransition key={message.id} timeout={250}>
+          <CSSTransition key={message.id} timeout={200}>
             {state => (
-              <AlertMessage state={state} timeout={250} message={message}/>
+              <AlertMessage state={state} timeout={200} message={message}/>
             )}
           </CSSTransition>
         ))}
