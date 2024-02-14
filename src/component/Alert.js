@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { v4 } from "uuid";
 import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
 import {logDOM} from "@testing-library/react";
@@ -56,6 +56,12 @@ const AlertMessage = ({message}) => {
     uiDispatch({type: UI_ACTION_TYPE.alert_message_remove, id})
   }
 
+  useEffect(() => {
+    const remove = setTimeout(() => {
+      removeMessage(message.id)
+    }, 5000)
+  }, [])
+
   return (
     <AlertMessageStyle>
       <div className="title-wrap">
@@ -68,6 +74,7 @@ const AlertMessage = ({message}) => {
         ><GoX/></IconButton>
       </div>
       <p>{message.message}</p>
+      <p>{message.id}</p>
     </AlertMessageStyle>
   )
 }
