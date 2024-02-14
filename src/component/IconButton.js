@@ -3,8 +3,8 @@ import {borderColor} from "polished";
 import {color} from "../style/theme";
 
 const IconButtonStyle = styled.button`
-  width: 45px;
-  height: 45px;
+  width: ${p => p.width}px;
+  aspect-ratio: 1/1;
   
   color: ${p => p.color};
   font-size: ${p => p.size}px;
@@ -15,7 +15,7 @@ const IconButtonStyle = styled.button`
   align-items: center;
   justify-content: center;
   
-  transition: 300ms;
+  transition: background-color 300ms, transform 300ms;
   
   &:hover {
     background-color: ${p => p.theme.color.Gray2};
@@ -23,15 +23,16 @@ const IconButtonStyle = styled.button`
   }
 `
 
-export const IconButton = ({children, color, background, size, ...rest}) => {
+export const IconButton = ({children, width, color, background, size, ...rest}) => {
   return (
-    <IconButtonStyle color={color} background={background} size={size} {...rest}>
+    <IconButtonStyle width={width} color={color} background={background} size={size} {...rest}>
       {children}
     </IconButtonStyle>
   )
 }
 
 IconButton.defaultProps = {
+  width: 45,
   color: color.Gray8,
   background: 'transparent',
   size: 22

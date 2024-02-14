@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {useEffect, useRef} from "react";
 
 const FooterStyle = styled.footer`
+  background-color: ${p => p.theme.color.Gray4};
   & > div {
     width: 100%;
     height: 100%;
@@ -23,7 +24,8 @@ const Footer = () => {
   return (
     <FooterStyle>
       <div ref={footerElement}>
-        푸터
+        개발・다자인 : 박희찬(kichan)
+        <p>오픈 소스 프로젝트 : <a href="https://github.com/kichan05/kichan.dev" target={"_blank"}>github.com/kichan05/kichan.dev</a></p>
       </div>
     </FooterStyle>
   )
