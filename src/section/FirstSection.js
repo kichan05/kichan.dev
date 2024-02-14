@@ -2,6 +2,8 @@ import styled from "styled-components";
 import {downUp, showLeft, animation, showRight} from "../style/animation";
 import {GoChevronDown} from "react-icons/go";
 import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
+import Button from "../component/Button";
+import {v4} from "uuid";
 
 const FirstSectionStyle = styled.section`
   width: 100%;
@@ -117,6 +119,17 @@ export const FirstSection = () => {
     })
   }
 
+  const add = () => {
+    dispatch({
+      type: UI_ACTION_TYPE.alert_message_add,
+      message: {
+        id: v4(),
+        title: "ㅎㅇ",
+        message: "어 그래"
+      }
+    })
+  }
+
   return (
     <FirstSectionStyle>
       <div className="title-wrap">
@@ -154,6 +167,8 @@ export const FirstSection = () => {
           </a>
         </div>
       </div>
+
+      <Button onClick={add}>추가</Button>
 
       <GoChevronDown className={"go-down"} onClick={scrollDown}/>
     </FirstSectionStyle>

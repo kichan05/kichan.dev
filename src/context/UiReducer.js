@@ -1,13 +1,18 @@
 import React, {useContext, useReducer} from "react";
+import { v4 } from "uuid";
 
 export const UI_ACTION_TYPE = {
   modal_show: "MODAL_SHOW",
   modal_hide: "MODAL_HIDE",
   modal_toggle: "MODAL_TOGGLE",
+
+  alert_message_add : "ALERT_MESSAGE_ADD",
+  alert_message_remove: "ALERT_MESSAGE_REMOVE",
 }
 
 const uiState = {
   isModalShow: false,
+  alertMessage: []
 }
 
 function reducer(state, action) {
@@ -26,6 +31,16 @@ function reducer(state, action) {
       return {
         ...state,
         isModalShow: !state.isModalShow
+      }
+    case UI_ACTION_TYPE.alert_message_add:
+      return {
+        ...state,
+        alertMessage: [...state.alertMessage, action.message]
+      }
+    case UI_ACTION_TYPE.alert_message_remove:
+      return {
+        ...state,
+        alertMessage: state.alertMessage.filter(m => m.id !== action.id)
       }
     default:
       throw "Undefined ui reducer action type"
