@@ -1,23 +1,20 @@
 import styled, {css} from "styled-components";
-import Pin from "./../assets/ic_pin.png"
-import {useState} from "react";
 
 const ProfileListStyle = styled.li`
   word-break: unset;
-  list-style: none;
-  
+
   position: relative;
   padding-left: 24px;
-  
+
   &::before {
     content: "";
     width: 17px;
     height: 17px;
-    
+
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(${Pin});
+    background-image: url(${p => p.icon});
     background-size: cover;
   }
 
@@ -56,18 +53,18 @@ const ProfileListStyle = styled.li`
   }
 `
 
-export const ProfileList = ({title, date, children}) => {
-  const [a, setA] = useState(false)
-
+const ProfileList = ({profile}) => {
   return (
-    <ProfileListStyle a={a} onClick={() => setA(!a)}>
+    <ProfileListStyle icon={profile.icon}>
       <div className="title-wrap">
-        <h3>{title}</h3>
-        <span className="date">{date}</span>
+        <h3>{profile.title}</h3>
+        <span className="date">{profile.date}</span>
       </div>
-      {children && <div className="description-wrap">
-        {children}
-      </div>}
+      <div className="description-wrap">
+        {profile.description}
+      </div>
     </ProfileListStyle>
   )
 }
+
+export {ProfileList}
