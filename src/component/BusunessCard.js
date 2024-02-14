@@ -2,6 +2,8 @@ import styled from "styled-components";
 import edcanLogo from "./../assets/edcan.svg"
 import edcanTypo from "./../assets/edcan_typo.svg"
 import {SCoreDream} from "../style/Font";
+import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
+import {v4} from "uuid";
 
 const BusinessCardStyle = styled.div`
   width: 300px;
@@ -161,6 +163,8 @@ const BusinessCardStyle = styled.div`
 `
 
 export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
+  const uiDispatch = useUiDispatch()
+
   const cardStyle = {
     transform: `perspective(2000px) rotateX(${cardState.xDeg}deg) rotateY(${cardState.yDeg}deg)`
   };
@@ -171,7 +175,16 @@ export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
   }
 
   const onEmailCopy = () => {
-    navigator.clipboard.writeText("me@kichan.dev")
+    navigator.clipboard.writeText("me@kichan.dev").then(() => {
+      uiDispatch({
+        type: UI_ACTION_TYPE.alert_message_add,
+        message: {
+          id: v4(),
+          title: "메일 주소 복사 완료",
+          message: "메일 주소를 복사했어요"
+        }
+      })
+    })
   }
 
   return (

@@ -1,8 +1,6 @@
 import styled, {css} from "styled-components";
 import {useEffect, useState} from "react";
-import { v4 } from "uuid";
-import {UI_ACTION_TYPE, useUiDispatch, useUiState} from "../context/UiReducer";
-import {logDOM} from "@testing-library/react";
+import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
 import {GoX} from "react-icons/go";
 import {IconButton} from "./IconButton";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
@@ -60,7 +58,7 @@ const AlertMessageStyle = styled.li`
   }
 
   p {
-    margin-top: 4px;
+    margin-top: 2px;
   }
 `
 
