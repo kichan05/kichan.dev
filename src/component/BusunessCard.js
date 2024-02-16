@@ -20,7 +20,7 @@ const BusinessCardStyle = styled.div`
     font-family: S-CoreDream;
 
     position: relative;
-    z-index: 999;
+    z-index: 2;
   }
 
   .front, .back {

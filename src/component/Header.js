@@ -6,8 +6,9 @@ const HeaderStyle = styled.header`
   
   background-color: ${p => p.theme.color.Gray1};
   
-  position: fixed;
+  position: sticky;
   top: 0;
+  z-index: 999;
   
   & > div {
     width: 100%;
