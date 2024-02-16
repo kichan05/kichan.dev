@@ -20,7 +20,12 @@ const AlertMessageStyle = styled.li`
 
   background-color: ${p => p.theme.color.Gray1};
   border: 1px solid ${p => p.theme.color.Gray4};
-  border-left: 5px solid ${p => p.theme.color.Blue5};
+  border-left: 5px solid ${p => {
+    if(p.color)
+      return p.color
+    else
+      return p.theme.color.Blue5
+  }};
   border-radius: 0.25em;
   padding: 12px;
   margin-bottom: 8px;
@@ -72,13 +77,13 @@ const AlertMessage = ({state, message, timeout}) => {
   }
 
   useEffect(() => {
-    // const remove = setTimeout(() => {
-    //   removeMessage(message.id)
-    // }, 5000)
+    const remove = setTimeout(() => {
+      removeMessage(message.id)
+    }, 5000)
   }, [])
 
   return (
-    <AlertMessageStyle state={state} timeout={timeout}>
+    <AlertMessageStyle state={state} timeout={timeout} color={message.color}>
       <div className="title-wrap">
         <div className="title">{message.title}</div>
         <IconButton
