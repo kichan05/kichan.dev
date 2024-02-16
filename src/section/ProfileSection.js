@@ -31,7 +31,7 @@ const ProfileSectionStyle = styled.section`
 
 export const ProfileSection = () => {
   return (
-    <ProfileSectionStyle>
+    <ProfileSectionStyle id={"profile"}>
       <div className="content">
         <h2>저의 활동 내역이에요</h2>
         <ul>

@@ -13,7 +13,7 @@ const Page = () => {
   return (
     <PageStyle>
       <FirstSection/>
-      <Header/>
+      {/*<Header/>*/}
       <BusinessCardSection/>
       <ProfileSection/>
     </PageStyle>

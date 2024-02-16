@@ -115,7 +115,7 @@ export const FirstSection = () => {
   }
 
   return (
-    <FirstSectionStyle>
+    <FirstSectionStyle id={"first"}>
       <div className="title-wrap">
         <div className="title">
           <h2 className="title1">저는</h2>
