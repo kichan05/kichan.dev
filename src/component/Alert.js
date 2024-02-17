@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
-import {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
-import {GoX} from "react-icons/go";
+import {GoX, GoArchive} from "react-icons/go";
 import {IconButton} from "./IconButton";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 
@@ -71,34 +71,51 @@ const AlertMessageStyle = styled.li`
 
 const AlertMessage = ({state, message, timeout}) => {
   const uiDispatch = useUiDispatch()
+  let removeTimeOut = useRef()
 
   const removeMessage = (id) => {
     uiDispatch({type: UI_ACTION_TYPE.alert_message_remove, id})
   }
 
   useEffect(() => {
-    const remove = setTimeout(() => {
+    removeTimeOut.current = setTimeout(() => {
       removeMessage(message.id)
     }, 5000)
+    console.log(removeTimeOut.current)
+
+    return () => {
+      console.log("unmount alert")
+    }
   }, [])
 
   return (
     <AlertMessageStyle state={state} timeout={timeout} color={message.color}>
       <div className="title-wrap">
         <div className="title">{message.title}</div>
-        <IconButton
-          width={24}
-          size={20}
-          className={"close-icon"}
-          onClick={() => removeMessage(message.id)}
-        ><GoX/></IconButton>
+        <div className="icon-wrap">
+          <IconButton
+            width={24}
+            size={20}
+            className={"close-icon"}
+            onClick={() => {
+              clearTimeout(removeTimeOut.current)
+            }}
+          ><GoArchive/></IconButton>
+          {/*todo : 압정 아이콘으로 변경*/}
+          <IconButton
+            width={24}
+            size={20}
+            className={"close-icon"}
+            onClick={() => removeMessage(message.id)}
+          ><GoX/></IconButton>
+        </div>
       </div>
       <p>{message.message}</p>
     </AlertMessageStyle>
   )
 }
 
-export const Alert = ({alertMessage}) => {
+const Alert = ({alertMessage}) => {
   return (
     <AlertStyle>
       <TransitionGroup>
@@ -113,3 +130,5 @@ export const Alert = ({alertMessage}) => {
     </AlertStyle>
   )
 }
+
+export default React.memo(Alert)

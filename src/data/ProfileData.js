@@ -36,6 +36,11 @@ export const profileData = [
     icon: Pin,
   },
   {
+    title: "2023 선린 장학생",
+    date: "2023.09", //todo : 날자가 언제였지
+    icon: Pin,
+  },
+  {
     title: "제 8회 선린 해커톤 동상 수상",
     date: "2022.07",
     description: (
@@ -76,14 +81,9 @@ export const profileData = [
         대회 전체적인 디자인과 포스터 현수막, 티셔츠 등을 디자인했습니다.
         <br/><br/>
         자세한 내용은 <a href={"#"} target={'_blank'}>대회 진행 후기</a>와 <a href="#" target={"_blank"}>디자인 결과물</a>을 참고해주세요
-        //Todo : url 추가
+        {/*Todo : url 추가*/}
       </>
     ),
     icon: Pin,  //Todo : 디자인은 아이콘 변경
   },
-  {
-    title: "2023 선린 장학생",
-    date: "2023.09", //todo : 날자가 언제였지
-    icon: Pin,
-  }
 ]
