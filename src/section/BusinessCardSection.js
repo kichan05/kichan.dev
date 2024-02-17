@@ -57,7 +57,7 @@ export const BusinessCardSection = () => {
   }
 
   return (
-    <BusinessCardSectionStyle>
+    <BusinessCardSectionStyle id={"business-card"}>
       <BusinessCard
         onMouseMove={onMouseMove}
         onMouseOut={onMouseOut}

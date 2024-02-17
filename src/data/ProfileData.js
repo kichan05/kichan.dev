@@ -3,7 +3,7 @@ import Trophy from "../assets/ic_trophy.png";
 
 export const profileData = [
   {
-    title: "선린 116기 소프트웨어과 졸업",
+    title: "선린인터넷고등학교 116기 소프트웨어과 졸업",
     date: "2021.03 ~ 2024.02",
     icon: Pin,
   },
@@ -12,7 +12,7 @@ export const profileData = [
     date: "2021.11 ~ 2022.11",
     description: (
       <>
-        모바일콘텐츠 개발반 <a href={"https://edcan.kr"} target={"_blank"}>EDCAN</a>의 8기 부부장으로 활동했습니다.
+        모바일콘텐츠 개발반 <a href={"https://edcan.kr"} target={"_blank"}>EDCAN</a>의 8기 부장으로 활동했습니다.
         <br/>
         동아리를 총괄하고 수업 준비, 행사 준비를 하면서 1년동안 동아리를 이끌어 갔습니다.
         <br/><br/>
@@ -37,7 +37,7 @@ export const profileData = [
   },
   {
     title: "제 8회 선린 해커톤 동상 수상",
-    data: "2022.07",
+    date: "2022.07",
     description: (
       <>
         제 8회 선린 해커톤에서 <b>생존</b>이라는 주제로
@@ -53,14 +53,14 @@ export const profileData = [
   },
   {
     title: "2022 선린 디지털 콘텐츠 경진대회 동상 수상",
-    data: "2022.12",
+    date: "2022.12",
     description: (
       <>
         2022년 선린 디지털콘텐츠 경진대회에서
         <br/>
         IT업종 종사자를 위한 팀빌딩 서비스 <b>Membeder</b>를 개발했고
         <br/>
-        동상을 수상했습니다. 팀에서는 팀장과 Android 개발 총괄을 진행했습니다.
+        동상을 수상했습니다. 팀에서는 <b>팀장과 Android 개발 총괄</b>을 진행했습니다.
         <br/><br/>
         <a href="https://github.com/Membeder" target={"_blank"}>깃허브</a>와 <a href="https://drive.google.com/drive/u/2/folders/1ZTcMfxDe91gHJKYtdRO9Q7g_JvkeEoCX" target={"_blank"}>프로젝트 설명서</a>를 참고해주세요
       </>
@@ -69,12 +69,21 @@ export const profileData = [
   },
   {
     title: "2023 선린 천하제일코딩대회 디자인 총괄",
-    data: "2023.04 ~ 2023.07",
-    icon: Pin,
+    date: "2023.04 ~ 2023.07",
+    description: (
+      <>
+        2023 선린 천하제일코딩대회에서 디자인 총괄을 맡아서<br/>
+        대회 전체적인 디자인과 포스터 현수막, 티셔츠 등을 디자인했습니다.
+        <br/><br/>
+        자세한 내용은 <a href={"#"} target={'_blank'}>대회 진행 후기</a>와 <a href="#" target={"_blank"}>디자인 결과물</a>을 참고해주세요
+        //Todo : url 추가
+      </>
+    ),
+    icon: Pin,  //Todo : 디자인은 아이콘 변경
   },
   {
     title: "2023 선린 장학생",
-    data: "2023",
+    date: "2023.09", //todo : 날자가 언제였지
     icon: Pin,
   }
 ]

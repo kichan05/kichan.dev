@@ -4,6 +4,7 @@ import edcanTypo from "./../assets/edcan_typo.svg"
 import {SCoreDream} from "../style/Font";
 import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
 import {v4} from "uuid";
+import {color} from "../style/theme";
 
 const BusinessCardStyle = styled.div`
   width: 300px;
@@ -20,7 +21,7 @@ const BusinessCardStyle = styled.div`
     font-family: S-CoreDream;
 
     position: relative;
-    z-index: 999;
+    z-index: 2;
   }
 
   .front, .back {
@@ -181,7 +182,8 @@ export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
         message: {
           id: v4(),
           title: "메일 주소 복사 완료",
-          message: "메일 주소를 복사했어요"
+          message: "메일 주소를 복사했어요",
+          color: color.Blue5,
         }
       })
     })
