@@ -35,8 +35,8 @@ function App() {
         <Resize/>
 
         <UiContextProvider>
-          {/*<Page/>*/}
-          <PortfolioPage/>
+          <Page/>
+          {/*<PortfolioPage/>*/}
           <Footer/>
           <UiSection/>
         </UiContextProvider>
