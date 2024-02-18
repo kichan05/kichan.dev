@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {ProfileList} from "../component/ProfileList";
 import {profileData} from "../data/ProfileData";
+import Pin from "../assets/ic_pin.png";
 
 const ProfileSectionStyle = styled.section`
   padding: 40px 24px;

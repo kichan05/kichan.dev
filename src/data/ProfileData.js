@@ -14,7 +14,7 @@ export const profileData = [
       <>
         모바일콘텐츠 개발반 <a href={"https://edcan.kr"} target={"_blank"}>EDCAN</a>의 8기 부장으로 활동했습니다.
         <br/>
-        동아리를 총괄하고 수업 준비, 행사 준비를 하면서 1년동안 동아리를 이끌어 갔습니다.
+        동아리를 총괄하고 수업 준비, 행사 준비, 예산 관리를 하면서 1년동안 동아리를 이끌어 갔습니다.
         <br/><br/>
         <a href="https://velog.io/@ckstmznf/지난-1년간-전공동아리를-이끌어보았다" target={"_blank"}>동아리 부장 회고록</a>을 참고해주세요
       </>
