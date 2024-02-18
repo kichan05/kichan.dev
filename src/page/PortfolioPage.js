@@ -5,9 +5,12 @@ import {useEffect, useState} from "react";
 
 const PortfolioPageStyle = styled.div`
   ${PageBasicStyle}
-  .mock-up {
+  section {
     width: 100%;
     aspect-ratio: 16 / 9;
+  }
+  
+  .mock-up {
     overflow: hidden;
     
     background-color: #6456ff;
@@ -22,6 +25,8 @@ const PortfolioPageStyle = styled.div`
     z-index: -1;
 
     img {
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -34,20 +39,22 @@ const PortfolioPageStyle = styled.div`
 export const PortfolioPage = () => {
   const [imageScale, setImageScale] = useState({
     marginGap: 0,
+    scale: 1,
     borderRadius: 0,
   })
 
   const scrollEvent = (e) => {
     const marginGap = Math.min(32, window.scrollY * 32 / 300)
-    let borderRadius
+    const scale = Math.max(0, -5 / 100000 * window.scrollY + 1)
 
+    let borderRadius
     if(window.scrollY > 0){
       borderRadius = 10
     }
     else {
       borderRadius = 0
     }
-    setImageScale({marginGap, borderRadius})
+    setImageScale({scale, marginGap, borderRadius})
   }
 
   useEffect(() => {
@@ -65,15 +72,17 @@ export const PortfolioPage = () => {
           <img
             src={MockUp} alt={"Membeder 목업 이미지"}
             style={{
-              width: `calc(100% - ${imageScale.marginGap}px)`,
-              height: `calc(100% - ${imageScale.marginGap}px)`,
+              transform: `scale(${imageScale.scale})`,
               borderRadius: `${imageScale.borderRadius}px`
             }}
           />
         </section>
-        <main>
-          대충 포폴 내용
-        </main>
+        <section>
+
+        </section>
+        <section>대충 내용</section>
+        <section>대충 내용</section>
+        <section>대충 내용</section>
       </div>
     </PortfolioPageStyle>
   )
