@@ -20,7 +20,7 @@ const ProfileListStyle = styled.li`
 
   h3 {
     color: ${p => p.theme.color.Gray9};
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.3em;
 
     display: inline-block;
@@ -50,6 +50,11 @@ const ProfileListStyle = styled.li`
 
   a:hover {
     text-decoration: underline;
+  }
+  
+  b {
+    color: ${p => p.theme.color.Gray8};
+    font-weight: 600;
   }
 `
 
