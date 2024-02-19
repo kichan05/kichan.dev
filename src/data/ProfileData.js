@@ -1,5 +1,6 @@
 import Pin from "../assets/ic_pin.png";
 import Trophy from "../assets/ic_trophy.png";
+import Design from "../assets/ic_design.png"
 
 export const profileData = [
   {
@@ -80,10 +81,11 @@ export const profileData = [
         2023 선린 천하제일코딩대회에서 디자인 총괄을 맡아서<br/>
         대회 전체적인 디자인과 포스터 현수막, 티셔츠 등을 디자인했습니다.
         <br/><br/>
-        자세한 내용은 <a href={"#"} target={'_blank'}>대회 진행 후기</a>와 <a href="#" target={"_blank"}>디자인 결과물</a>을 참고해주세요
-        {/*Todo : url 추가*/}
+        자세한 내용은 <a href="https://velog.io/@ckstmznf/2023-선린-천하제일-코딩대회-스탭참가-후기" target={'_blank'}>대회 진행 후기</a>와
+        <a href="#" target={"_blank"}>디자인 결과물</a>을 참고해주세요
+        {/*Todo : 천코대 디자인 결과물 url 추가*/}
       </>
     ),
-    icon: Pin,  //Todo : 디자인은 아이콘 변경
+    icon: Design
   },
 ]
