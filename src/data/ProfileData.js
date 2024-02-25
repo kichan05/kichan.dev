@@ -27,7 +27,7 @@ export const profileData = [
     date: "2022.04 ~ 2022.08",
     description: (
       <>
-        선린인터넷고등학교가 주관, 주최하는 2022 소프트웨어 나눔축제의 캠프 총괄로 활동했습니다.
+        선린인터넷고등학교가 주관, 주최하는 <a href="https://zesty-raindrop-bcc4a0.netlify.app/" target={"_blank"}>2022 소프트웨어 나눔축제</a>의 캠프 총괄로 활동했습니다.
         <br/>
         EDCAN 캠프(AndroidStudio로 나만의 일기장 앱 만들기)를 운영했습니다.
         <br/><br/>
