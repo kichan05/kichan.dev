@@ -8,6 +8,7 @@ import UiSection from "./section/UiSection";
 import React, {useEffect} from "react";
 import {UiContextProvider} from "./context/UiReducer";
 import Page from "./page/Page";
+import {PortfolioPage} from "./page/PortfolioPage";
 
 const Test = styled.div`
   height: var(--footer-height);
@@ -35,6 +36,7 @@ function App() {
 
         <UiContextProvider>
           <Page/>
+          {/*<PortfolioPage/>*/}
           <Footer/>
           <UiSection/>
         </UiContextProvider>
