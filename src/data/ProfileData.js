@@ -68,7 +68,7 @@ export const profileData = [
         <br/>
         동상을 수상했습니다. 팀에서는 <b>팀장과 Android 개발 총괄</b>을 진행했습니다.
         <br/><br/>
-        <a href="https://github.com/Membeder" target={"_blank"}>깃허브</a>와 <a href="https://drive.google.com/drive/u/2/folders/1ZTcMfxDe91gHJKYtdRO9Q7g_JvkeEoCX" target={"_blank"}>프로젝트 설명서</a>를 참고해주세요
+        <a href="https://github.com/Membeder" target={"_blank"}>깃허브</a>와 <a href="https://drive.google.com/file/d/1_Xco4DxNDVJppvE2l8VnLhB_r-BDjHhT/view?usp=sharing" target={"_blank"}>프로젝트 설명서</a>를 참고해주세요
       </>
     ),
     icon: Trophy,
