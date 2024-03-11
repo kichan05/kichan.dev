@@ -13,7 +13,7 @@ const FirstSectionStyle = styled.section`
 
   .title-wrap {
     color: ${p => p.theme.color.Gray0};
-    font-size: 35px;
+    font-size: 1.9rem;
     text-align: center;
 
     position: absolute;
@@ -60,6 +60,8 @@ const FirstSectionStyle = styled.section`
     animation-duration: 1200ms;
     animation-delay: 2700ms;
     animation-fill-mode: backwards;
+    
+    word-break: keep-all;
   }
 
   .link {
@@ -102,6 +104,9 @@ const FirstSectionStyle = styled.section`
     transform: translateX(-50%);
     
     animation: ${animation} 1200ms 2700ms 1 normal ease-in-out backwards, ${downUp} 2000ms 3500ms ease-in-out infinite;
+  }
+  
+  @media (max-width: 400px) {
   }
 `
 

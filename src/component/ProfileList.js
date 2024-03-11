@@ -21,7 +21,7 @@ const ProfileListStyle = styled.li`
   h3 {
     color: ${p => p.theme.color.Gray9};
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: 1.4em;
 
     display: inline-block;
   }
