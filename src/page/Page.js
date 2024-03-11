@@ -17,7 +17,7 @@ const Page = () => {
       {/*<Header/>*/}
       <BusinessCardSection/>
       <ProfileSection/>
-      {/*<ProjectSection/>*/}
+      <ProjectSection/>
     </PageStyle>
   )
 }
