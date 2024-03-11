@@ -3,11 +3,12 @@ import {PageBasicStyle} from "../style/BasicStyle";
 import {FirstSection} from "../section/FirstSection";
 import {BusinessCardSection} from "../section/BusinessCardSection";
 import {ProfileSection} from "../section/ProfileSection";
-import Header from "../component/Header";
+import {ProjectSection} from "../section/ProjectSection";
 
 const PageStyle = styled.div`
    ${PageBasicStyle};
 `
+
 
 const Page = () => {
   return (
@@ -16,6 +17,7 @@ const Page = () => {
       {/*<Header/>*/}
       <BusinessCardSection/>
       <ProfileSection/>
+      <ProjectSection/>
     </PageStyle>
   )
 }
