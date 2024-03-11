@@ -8,12 +8,13 @@ export const Resize = () => {
     document.documentElement.style.setProperty("--vh", `${vh}px`)
     document.documentElement.style.setProperty("--vw", `${vw}px`)
   }
+
   useEffect(() => {
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => {
       window.removeEventListener("resize", handleResize)
     }
-  })
+  }, [])
   return <div></div>
 }

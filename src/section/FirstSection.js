@@ -60,6 +60,8 @@ const FirstSectionStyle = styled.section`
     animation-duration: 1200ms;
     animation-delay: 2700ms;
     animation-fill-mode: backwards;
+    
+    word-break: keep-all;
   }
 
   .link {
