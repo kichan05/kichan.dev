@@ -20,6 +20,10 @@ const FirstSectionStyle = styled.section`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    *::selection {
+      background-color: rgba(0, 0, 0, 0.16);
+    }
   }
 
   .title1 {
@@ -60,7 +64,7 @@ const FirstSectionStyle = styled.section`
     animation-duration: 1200ms;
     animation-delay: 2700ms;
     animation-fill-mode: backwards;
-    
+
     word-break: keep-all;
   }
 
@@ -102,10 +106,10 @@ const FirstSectionStyle = styled.section`
 
     cursor: pointer;
     transform: translateX(-50%);
-    
+
     animation: ${animation} 1200ms 2700ms 1 normal ease-in-out backwards, ${downUp} 2000ms 3500ms ease-in-out infinite;
   }
-  
+
   @media (max-width: 400px) {
   }
 `
