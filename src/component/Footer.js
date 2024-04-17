@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <FooterStyle>
       <div ref={footerElement}>
-        개발・다자인 : 박희찬(kichan)
+        개발・디자인 : 박희찬(kichan)
         <p>오픈 소스 프로젝트 : <a href="https://github.com/kichan05/kichan.dev" target={"_blank"}>github.com/kichan05/kichan.dev</a></p>
       </div>
     </FooterStyle>

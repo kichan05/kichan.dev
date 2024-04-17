@@ -5,6 +5,8 @@ import {GoX, GoArchive} from "react-icons/go";
 import {IconButton} from "./IconButton";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 
+import Pin from "./../assets/ic_pin.png"
+
 const AlertStyle = styled.ul`
   display: inline-block;
   
@@ -58,6 +60,10 @@ const AlertMessageStyle = styled.li`
   .close-icon {
     opacity: 0;
     transition: 200ms;
+    
+    img {
+      width: 20px;
+    }
   }
   
   &:hover .close-icon {
@@ -100,8 +106,7 @@ const AlertMessage = ({state, message, timeout}) => {
             onClick={() => {
               clearTimeout(removeTimeOut.current)
             }}
-          ><GoArchive/></IconButton>
-          {/*todo : 압정 아이콘으로 변경*/}
+          ><img src={Pin} alt=""/></IconButton>
           <IconButton
             width={24}
             size={20}
