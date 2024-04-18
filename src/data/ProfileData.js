@@ -52,7 +52,7 @@ export const profileData = [
         <br/>
         팀에서 Android 개발을 총괄했습니다.
         <br/><br/>
-        <a href="https://www.youtube.com/watch?v=by67z0esb0c" target={"_blank"}>위그비 소개 영상</a>을 참고해주세요.
+        <a href="https://www.youtube.com/watch?v=by67z0esb0c" target={"_blank"}>위그비 소개 영상</a>을 참고해주세요
       </>
     ),
     icon: Trophy,
